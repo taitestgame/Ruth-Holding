@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(to bottom, #caecfc 0%, #ddfdfe0d 90%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+/* Ẩn header khi cuộn xuống */
+.header.hide {
+  top: -100px;
+  opacity: 0;
+}
+
+/* Hiện lại header khi cuộn lên */
+.header.show {
+  top: 0;
+  opacity: 1;
+}
+
+
+.logo img {
+  height: 70px;
+  width: auto;
+  margin-left: -40px;
+  margin-top: -26px;
+}
+
+
+.navbar {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #002244;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #0077cc;
+}
+
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #002244;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
