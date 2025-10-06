@@ -1,20 +1,20 @@
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Đã thêm Montserrat nếu chưa có */
 
-/* ================= Header ================= */
+/* ================= Body & Typography ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Header */
+/* ================= Header PC ================= */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 90px;
-    background: linear-gradient(to bottom, #c8eeff 0%, #ddfdfe0d 100%);
+    background: linear-gradient(to bottom, #c8eeff 0%, #ddfdfe0d 105%);
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -45,12 +45,9 @@ body {
 .navbar {
     display: flex;
     gap: 40px;
-    
-    
     flex-grow: 1; 
     justify-content: center; 
-    margin-top: 50px;
-   
+    margin-top: 50px; /* Điều chỉnh lại vì Header có height 90px */
     margin-left: 0;
     margin-right: 0; 
 }
@@ -58,10 +55,9 @@ body {
 .navbar a {
     text-decoration: none;
     color: #000000;
-    font-weight: 700;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
    
+    font-size: 15px;
+    font-family: sans-serif;
     transition: color 0.3s;
     position: relative;
 }
@@ -72,36 +68,41 @@ body {
     text-decoration-thickness: 1.5px;
 }
 
+/* Link active PC */
+.navbar a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
 /* Search PC */
 .search {
     display: flex;
     align-items: center;
     gap: 15px;
-    color: #020f1c;
+    color: #020f1c; /* Màu chữ và màu icon */
     font-size: 15px;
     cursor: pointer;
-    
-    
     margin-left: 150px;
     margin-right: -150px; 
     transition: color 0.3s, text-decoration 0.3s;
 }
 
-/* Hover cho Search */
-
-
-/* Ẩn SVG tìm kiếm trên PC/Tablet */
-.search .search-svg {
-    display: none;
-}
-
+/* Kích thước và màu sắc cho icon SVG */
 .search svg {
     width: 18px;
     height: 18px;
-    stroke: #090909;
+    
+    stroke: currentColor; 
+    
 }
 
-/* ================= Mobile Menu ================= */
+/* Đảm bảo icon tìm kiếm hiển thị trên PC (vì nó đã bị ẩn trong code cũ) */
+.navbar .search svg {
+    display: block; 
+}
+
+/* ================= Mobile Menu & Sidebar ================= */
 
 .mobile-menu-icon {
     display: none;
@@ -109,7 +110,6 @@ body {
     cursor: pointer;
     color: #333;
 }
-
 
 .menu-btn {
     display: none; /* ẨN TRÊN PC/TABLET */
@@ -133,6 +133,7 @@ body {
     transition: 0.3s;
     padding-top: 60px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
 .sidebar a {
@@ -159,16 +160,10 @@ body {
 
 /* TINH CHỈNH ACTIVE CHO SIDEBAR MOBILE */
 .sidebar a.active {
-    font-weight: 600 !important; /* Giảm độ đậm một chút */
-    background-color: #f0f0f0; /* Dùng màu nền để làm nổi bật */
-    text-decoration: none !important; /* XÓA GẠCH CHÂN */
+    font-weight: 600 !important;
+    background-color: #f0f0f0;
+    text-decoration: none !important;
     color: #020202;
-}
-
-/* Đảm bảo link active trong PC Navbar (dùng cho .navbar a) vẫn là bold/underline nếu cần */
-.navbar a.active {
-    font-weight: bold;
-    text-decoration: underline;
 }
 
 /* Style search trong sidebar mobile */
@@ -187,6 +182,14 @@ body {
     color: #020202;
     background-color: #f0f0f0; 
     text-decoration: none;
+}
+
+/* Kích thước icon SVG trong sidebar mobile */
+.sidebar .search svg {
+    width: 20px; 
+    height: 20px;
+    /* Đảm bảo icon hiển thị trong sidebar */
+    display: block;
 }
 
 /* ================= Media Queries ================= */
@@ -226,7 +229,12 @@ body {
         height: auto;
         justify-content: center;
         align-items: center;
+        /* Thêm padding/margin trên mobile để tránh che khuất bởi menu-btn */
+        padding-top: 60px; 
     }
+    /* Điều chỉnh lại vị trí header trên mobile để logo vẫn nằm trong view khi ẩn/hiện */
+    .header { top: 0; }
+
     .logo img { height: 100px; margin: 0; }
     
     /* Ẩn Navbar PC */
@@ -237,8 +245,23 @@ body {
     }
     
     .navbar a { font-size: 13px; margin-top: 0; }
-    .search { width: 100%; justify-content: flex-start; font-size: 13px; margin-top: 10px; }
-    .search svg { width: 14px; height: 14px; }
+    
+    /* Căn chỉnh lại Search trên Mobile */
+    .search { 
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 13px;
+        margin-top: -10px;
+        margin-left: 0; /* Đảm bảo không còn margin lệch */
+        margin-right: 0;
+        padding-left: 0;
+    }
+    
+    /* Kích thước icon SVG trên Mobile */
+    .search svg { 
+        width: 16px; 
+        height: 16px; 
+    }
 
     /* Hiển thị Hamburger icon */
     .menu-btn {
@@ -247,10 +270,17 @@ body {
         left: 20px;
     }
 
-    .header.hide {
-        top: -100px !important;
-        opacity: 0 !important;
+    /* Cần giữ lại header trên mobile khi menu-btn hiện ra */
+    .header {
+        position: absolute; /* Thay đổi thành absolute nếu fixed gây vấn đề với menu-btn */
+        width: 100%;
     }
 
+    /* Header hide trên mobile */
+    .header.hide {
+        top: -150px !important; /* Dùng giá trị lớn hơn để đảm bảo ẩn */
+        opacity: 0 !important;
+    }
+    
     .mobile-menu-icon { display: block; }
 }
