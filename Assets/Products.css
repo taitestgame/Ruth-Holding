@@ -1,0 +1,256 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* ================= Header ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, #c8eeff 0%, #ddfdfe0d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 60px;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+/* Ẩn/Hiện Header */
+.header.hide {
+    top: -100px;
+    opacity: 0;
+}
+.header.show {
+    top: 0;
+    opacity: 1;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+/* Navbar PC */
+.navbar {
+    display: flex;
+    gap: 40px;
+    
+    
+    flex-grow: 1; 
+    justify-content: center; 
+    margin-top: 50px;
+   
+    margin-left: 0;
+    margin-right: 0; 
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+   
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #003860;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+/* Search PC */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #020f1c;
+    font-size: 15px;
+    cursor: pointer;
+    
+    
+    margin-left: 150px;
+    margin-right: -150px; 
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Hover cho Search */
+
+
+/* Ẩn SVG tìm kiếm trên PC/Tablet */
+.search .search-svg {
+    display: none;
+}
+
+.search svg {
+    width: 18px;
+    height: 18px;
+    stroke: #090909;
+}
+
+/* ================= Mobile Menu ================= */
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+.menu-btn {
+    display: none; /* ẨN TRÊN PC/TABLET */
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    color: #1b1e21;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #c8eeff 0%, #ddfdfe0d 50%);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #030508;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #f0f0f0;
+    color: #020202;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* TINH CHỈNH ACTIVE CHO SIDEBAR MOBILE */
+.sidebar a.active {
+    font-weight: 600 !important; /* Giảm độ đậm một chút */
+    background-color: #f0f0f0; /* Dùng màu nền để làm nổi bật */
+    text-decoration: none !important; /* XÓA GẠCH CHÂN */
+    color: #020202;
+}
+
+/* Đảm bảo link active trong PC Navbar (dùng cho .navbar a) vẫn là bold/underline nếu cần */
+.navbar a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Style search trong sidebar mobile */
+.sidebar .search {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 20px;
+    color: #030508;
+    transition: 0.2s;
+    gap: 10px;
+    margin-left: 0;
+    margin-right: 0; 
+}
+.sidebar .search:hover {
+    color: #020202;
+    background-color: #f0f0f0; 
+    text-decoration: none;
+}
+
+/* ================= Media Queries ================= */
+
+/* Desktop / Windows */
+@media (min-width: 1025px) {
+    .header {
+        padding: 0 60px;
+        height: 90px;
+    }
+    .navbar { 
+        gap: 50px; 
+    }
+    .search { gap: 15px; }
+}
+
+/* iPad / Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        padding: 0 60px;
+        height: 90px;
+    }
+    .logo img { height: 90px; }
+    
+    /* Căn giữa dọc: Đặt lại margin-top về 0 */
+    .navbar a { font-size: 15px; margin-top: 0; } 
+    .search { font-size: 15px; margin-top: 0; gap: 15px; }
+    
+    .search svg { width: 18px; height: 18px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        padding: 10px 20px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img { height: 100px; margin: 0; }
+    
+    /* Ẩn Navbar PC */
+    .navbar { 
+        display: none;
+        margin-left: 0; 
+        margin-right: 0;
+    }
+    
+    .navbar a { font-size: 13px; margin-top: 0; }
+    .search { width: 100%; justify-content: flex-start; font-size: 13px; margin-top: 10px; }
+    .search svg { width: 14px; height: 14px; }
+
+    /* Hiển thị Hamburger icon */
+    .menu-btn {
+        display: block !important; 
+        top: 20px;
+        left: 20px;
+    }
+
+    .header.hide {
+        top: -100px !important;
+        opacity: 0 !important;
+    }
+
+    .mobile-menu-icon { display: block; }
+}
