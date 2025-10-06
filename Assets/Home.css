@@ -34,10 +34,10 @@ body {
 
 
 .logo img {
-  height: 70px;
+  height: 90px;
   width: auto;
-  margin-left: -40px;
-  margin-top: -26px;
+  margin-left: -20px;
+  margin-top:5px;
 }
 
 
@@ -48,13 +48,20 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #002244;
+  color: #000000;
   font-weight: bold;
+  position: relative;
   transition: color 0.3s;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-top:50px;
+  
 }
 
 .navbar a:hover {
-  color: #0077cc;
+  color: #003860;
+  text-decoration: underline;
 }
 
 
@@ -62,9 +69,18 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #002244;
-  font-size: 14px;
+  color: #020f1c;
+  font-size: 15px;
   cursor: pointer;
+  gap: 15px;
+  margin-top:50px;
+  
 }
+.search svg {
+    width: 18px;           /* nhỏ lại */
+    height: 18px;
+    stroke: #090909;
+}
+
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
