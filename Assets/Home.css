@@ -79,15 +79,14 @@ body {
 .search {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     color: #020f1c; /* Màu chữ và màu icon */
     font-size: 15px;
     cursor: pointer;
-    margin-left: 500px;
-    margin-right: -450px;
+    margin-left: 250px;
+    margin-right: -250px; 
     transition: color 0.3s, text-decoration 0.3s;
 }
-
 /* Kích thước và màu sắc cho icon SVG */
 .search svg {
     width: 18px;
@@ -204,7 +203,7 @@ body {
         height: 90px;
     }
     .navbar {
-        gap: 80px;
+        gap: 90px;
     }
     .search { gap: 15px; }
    
