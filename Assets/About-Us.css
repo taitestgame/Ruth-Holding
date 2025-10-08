@@ -76,18 +76,18 @@ body {
 }
 
 /* Search PC */
+/* Search PC */
 .search {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     color: #020f1c; /* Màu chữ và màu icon */
     font-size: 15px;
     cursor: pointer;
-    margin-left: 500px;
-    margin-right: -450px;
+    margin-left: 250px;
+    margin-right: -250px; 
     transition: color 0.3s, text-decoration 0.3s;
 }
-
 /* Kích thước và màu sắc cho icon SVG */
 .search svg {
     width: 18px;
@@ -208,151 +208,7 @@ body {
     }
     .search { gap: 15px; }
    
-    main {
-        display: flex;
-        gap: 260px;           /* khoảng cách n /* nếu cần khoảng cách ngoài */
-        height: calc(100vh - 200px); /* tùy chỉnh chiều cao */
-        box-sizing: border-box;
-       
-    }
-   
-    .img1 {
-        width: 940px;            /* đặt chiều rộng đủ lớn */
-        height: 800px;            /* chiều cao tự động theo tỉ lệ */
-        overflow: hidden;
-        margin-top: 105px;        /* dịch cả container xuống */
-        flex-shrink: 0;          /* tránh bị co lại trong flex */
-    }
-   
-    .img1 img {
-        width: 110%;             /* ảnh co vừa chiều rộng container */
-        height: 110%;            /* giữ tỉ lệ */
-        object-fit: cover;       /* nếu cần cắt ảnh */
-        display: block;
-        float: none;             /* bỏ float */
-        margin-top: 0;           /* bỏ margin trên */
-    }
-   
-   
-    .content-section {
-        width: 50%; /* hoặc tỷ lệ bạn muốn */
-        background-color: white;
-    }
-   
-    .welcome-content {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        gap: 20px;
-       
-        margin-top: 200px;
-    }
-   
-    /* 1. TIÊU ĐỀ và VĂN BẢN MÔ TẢ */
-    .welcome-content h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 60px;
-        line-height: 1.1;
-        /* Màu tím đậm như trong mẫu */
-        color: #1c1c38;
-        margin-bottom: 20px;
-        opacity: 0; /* Ban đầu ẩn đi */
-        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
-        animation: slideDown 1s ease-out forwards; /* Hiệu ứng sổ xuống */
-        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
-    }
-   
-    /* Định nghĩa hiệu ứng animation */
-    @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-   
-    .welcome-content p {
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 1.5;
-        color: #333;
-       
-        max-width: 300px;
-        padding-right: 0;
-       
-        margin-bottom: 20px;
-        opacity: 0; /* Ban đầu ẩn đi */
-        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
-        animation: slideUp 1s ease-out forwards; /* Hiệu ứng sổ lên */
-        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
-    }
-   
-    /* Định nghĩa hiệu ứng animation */
-    @keyframes slideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-   
-    /* 2. NÚT "Contact Us" */
-    .contact-button {
-        position: absolute;
-        bottom: 48%;
-        right: 245px;
-        padding: 14px 29px;
-        background-color: #B3E5FC;
-        color: #3f74c2;
-        text-decoration: none;
-        border-radius: 25px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        font-weight: bold;
-        white-space: nowrap;
-        display: inline-block;
-        transition: all 0.3s ease;
-        opacity: 0; /* Ban đầu ẩn đi */
-        transform: translateX(100px); /* Dịch chuyển ra ngoài bên phải 100px */
-        animation: slideInFromRight 1s ease-out forwards; /* Hiệu ứng di chuyển từ phải vào */
-        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
-    }
-   
-    /* Định nghĩa hiệu ứng animation */
-    @keyframes slideInFromRight {
-        0% {
-            opacity: 0;
-            transform: translateX(100px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    .contact-button:hover {
-        background-color: #ffffff;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        color: #000000;
-        border: 1px solid #000000;
-    }
-    .specializations {
-        padding: 150px;
-        background-color: #f5f5f5;
-    }
-   
-    .specializations h2 {
-        margin-left: -120px;
-        margin-top: 18px;
-        font-size: 45px;
-        color: #000000;
-       
-    }
+
 
 
 
