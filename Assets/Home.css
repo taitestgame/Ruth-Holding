@@ -220,7 +220,7 @@ body {
         width: 770px;            /* đặt chiều rộng đủ lớn */
         height: 730px;            /* chiều cao tự động theo tỉ lệ */
         overflow: hidden;
-        margin-top: 100px;        /* dịch cả container xuống */
+        margin-top: 95px;        /* dịch cả container xuống */
         flex-shrink: 0;          /* tránh bị co lại trong flex */
     }
    
@@ -230,7 +230,11 @@ body {
         object-fit: cover;       /* nếu cần cắt ảnh */
         display: block;
         float: none;             /* bỏ float */
-        margin-top: 0;           /* bỏ margin trên */
+        margin-top: 0;  
+        transition: transform 0.5s ease;         /* bỏ margin trên */
+    }
+        .img1 img:hover {
+        transform: scale(1.05);   /* phóng to nhẹ khi hover (hiệu ứng hiện đại) */
     }
    
     main, .main-content-wrapper { 
@@ -345,19 +349,253 @@ body {
         border: 1px solid #000000;
     }
     .specializations {
-        padding: 150px;
-        background-color: #ffffff; 
-        
+        width: 100%;
+        display: block !important;
+        text-align: left !important;
+        margin-top: 50px;
+        padding: 50px 0;
+    }
 
+
+    .specializations h2 {
+        margin-left: -1000px;            
+        margin-top: 50px;
+        font-size: 50px;
+        color: #000000;
+        font-weight: bold;
+        
+    }
+
+
+
+
+    /* ===== GRID CHUNG ===== */
+    .grid-row {
+        margin-left: -1030px;
+    display: grid;
+    /* giảm khoảng cách giữa khung */
+    margin-bottom: 20px;
+    }
+
+    .top-row {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    }
+
+    .bottom-row {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    }
+
+    .grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 100%;
+    height: 250px; /* giảm từ 300px xuống */
+    transform: scale(0.97); /* thu nhỏ khung */
+    transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+    transform: scale(0.95); 
+    }
+
+    .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    }
+
+    /* Overlay hiệu ứng */
+    .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: rgba(123, 119, 119, 0.546);
+    padding: 15px;
+    transition: background 0.3s ease;
+    }
+
+    .overlay h3 {
+    font-size: 16px; /* nhỏ hơn 20px */
+    margin-bottom: 6px;
+    font-weight: 700;
+    }
+
+    .overlay p {
+    font-size: 13px; /* nhỏ hơn 15px */
+    line-height: 1.4;
+    font-weight: 500;
+    }
+
+    /* Hover hiệu ứng */
+    .grid-item:hover img {
+    transform: scale(1.1);
+    }
+    .grid-item:hover .overlay {
+    background: rgba(0, 0, 0, 0.65);
+    }
+
+.mission-vision {
+margin-left: -1030px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+/* ----------- PHẦN MISSION ----------- */
+.mission {
+  flex: 1.2;
+  background-color: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mission img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+}
+
+/* ----------- PHẦN VISION ----------- */
+.vision {
+  flex: 0.5;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 500px;
+}
+
+/* Ảnh nền có hiệu ứng đứng yên */
+.vision img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  transform: translateY(calc(var(--scroll, 0) * -0.3px));
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Overlay phủ nhẹ để chữ nổi bật */
+.vision::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* CHỮ TRÊN ẢNH */
+.vision p {
+  position: absolute;
+  top: 35%;               /* vị trí dọc ảnh */
+  left: 10%;              /* dịch qua phải một chút */
+  transform: translate(0%, -50%);
+  color: #fff;
+  font-size: 50px;        /* to, rõ ràng như hình bạn gửi */
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+  margin: 0;
+  z-index: 3;             /* 🔥 đảm bảo nằm trên overlay & ảnh */
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* làm nổi chữ hơn */
+}
+
+
+
+/* NÚT */
+.contact-button {
+  position: absolute;
+  bottom: 15%;
+  right: 50px;
+  padding: 14px 30px;
+  background-color: #f5f4f4;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  z-index: 2;
+  transition: all 0.3s ease;/* CHỮ TRÊN ẢNH */
+.vision p {
+  position: absolute;
+  top: 35%;               /* vị trí dọc ảnh */
+  left: 10%;              /* dịch qua phải một chút */
+  transform: translate(0%, -50%);
+  color: #fff;
+  font-size: 50px;        /* to, rõ ràng như hình bạn gửi */
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+  margin: 0;
+  z-index: 3;             /* 🔥 đảm bảo nằm trên overlay & ảnh */
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* làm nổi chữ hơn */
+opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
     }
    
-    .specializations h2 {
-        margin-left: -120px;
-        margin-top: 18px;
-        font-size: 45px;
-        color: #000000;
-       
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
+
+  opacity: 0; /* ẩn lúc đầu */
+  transform: translate(-100%, 50px); /* dịch sang trái và xuống */
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, 50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-100%, 0);
+  }
+}
+
+.contact-button:hover {
+  background-color: #36093c;
+  color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+/* Responsive */
+
+
+    
+
+
+    
+    
+
 
 
 
@@ -434,6 +672,157 @@ body {
         height: 18px;
        
         stroke: currentColor;
+       
+    }
+    main {
+        display: flex;
+        gap: 260px;           /* khoảng cách n /* nếu cần khoảng cách ngoài */
+        height: calc(100vh - 200px); /* tùy chỉnh chiều cao */
+        box-sizing: border-box;
+       
+    }
+   
+    .img1 {
+        width: 450px;            /* đặt chiều rộng đủ lớn */
+        height: 630px;            /* chiều cao tự động theo tỉ lệ */
+        overflow: hidden;
+        margin-top: 95px;        /* dịch cả container xuống */
+        flex-shrink: 0;          /* tránh bị co lại trong flex */
+    }
+   
+    .img1 img {
+        width: 100%;             /* ảnh co vừa chiều rộng container */
+        height: 100%;            /* giữ tỉ lệ */
+        object-fit: cover;       /* nếu cần cắt ảnh */
+        display: block;
+        float: none;             /* bỏ float */
+        margin-top: 0;  
+    }
+   
+    main, .main-content-wrapper { 
+        /* Giả sử 'main' hoặc '.main-content-wrapper' là lớp bao bọc lớn nhất cho nội dung */
+        background-color: #ffffff !important; /* Dùng !important nếu cần ghi đè */
+    }
+    .content-section {
+        width: 100%; /* hoặc tỷ lệ bạn muốn */
+        background-color: white;
+    }
+   
+    .welcome-content {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: -170px;
+        margin-top: 200px;
+    }
+   
+    /* 1. TIÊU ĐỀ và VĂN BẢN MÔ TẢ */
+    .welcome-content h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 1.1;
+        
+        /* Màu tím đậm như trong mẫu */
+        color: #1c1c38;
+        margin-bottom: 20px;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 1s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+   
+    .welcome-content p {
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #333;
+       
+        max-width: 300px;
+        padding-right: 0;
+        margin-top: 70px;
+        margin-bottom: 20px;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 1s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+   
+    /* 2. NÚT "Contact Us" */
+    .contact-button {
+        position: absolute;
+        bottom: 51%;
+        right: 70px;
+        padding: 14px 29px;
+        background-color: #B3E5FC;
+        color: #3f74c2;
+        text-decoration: none;
+        border-radius: 25px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        font-weight: bold;
+        white-space: nowrap;
+        display: inline-block;
+        transition: all 0.3s ease;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateX(100px); /* Dịch chuyển ra ngoài bên phải 100px */
+        animation: slideInFromRight 1s ease-out forwards; /* Hiệu ứng di chuyển từ phải vào */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideInFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .contact-button:hover {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        color: #000000;
+        border: 1px solid #000000;
+    }
+    .specializations {
+        padding: 150px;
+        background-color: #ffffff; 
+        
+
+    }
+   
+    .specializations h2 {
+        margin-left: -120px;
+        margin-top: -200px;
+        font-size: 45px;
+        color: #000000;
        
     }
    
@@ -526,4 +915,169 @@ body {
     }
    
     .mobile-menu-icon { display: block; }
+
+    main {
+                  /* khoảng cách n /* nếu cần khoảng cách ngoài */
+        height: calc(100vh - 200px); /* tùy chỉnh chiều cao */
+        box-sizing: border-box;
+       
+    }
+   
+    .img1 {
+        width: auto;            /* đặt chiều rộng đủ lớn */
+        height: auto;            /* chiều cao tự động theo tỉ lệ */
+        overflow: hidden;
+        margin-top: 170px;        /* dịch cả container xuống */
+        flex-shrink: 0;          /* tránh bị co lại trong flex */
+    }
+   
+    .img1 img {
+        width: 100%;             /* ảnh co vừa chiều rộng container */
+        height: auto;            /* giữ tỉ lệ */
+        object-fit: cover;       /* nếu cần cắt ảnh */
+        display: block;
+        float: none;             /* bỏ float */
+        margin-top: 0;  
+    }
+   
+    main, .main-content-wrapper { 
+       
+        background-color: #ffffff !important; /* Dùng !important nếu cần ghi đè */
+    }
+    .content-section {
+        width: 100%; /* hoặc tỷ lệ bạn muốn */
+        background-color: white;
+    }
+   
+    .welcome-content {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px; 
+        position: relative;
+        
+        /* Điều chỉnh lề trên cho toàn bộ khối nội dung */
+       
+        
+    }
+   
+    /* 1. TIÊU ĐỀ và VĂN BẢN MÔ TẢ */
+    .welcome-content h1 {
+        align-items: center;
+        margin-left: auto; /* Tự động căn lề trái */
+        margin-right: auto;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 1.1;
+        /* Màu tím đậm như trong mẫu */
+        color: #1c1c38;
+        margin-bottom: 20px;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 1s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+   
+    .welcome-content p {
+        align-items: center;
+        margin-left: auto; /* Tự động căn lề trái */
+        margin-right: auto;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #333;
+        align-items: center;
+        max-width: 300px;
+        padding-right: 0;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 1s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+   
+    /* 2. NÚT "Contact Us" */
+    .contact-button {
+       
+        align-items: center;
+        margin-left: auto; /* Tự động căn lề trái */
+        margin-right: auto;
+        margin-top: -20px;
+        padding: 15px 60px;
+        background-color: #B3E5FC;
+        color: #3f74c2;
+        text-decoration: none;
+        border-radius: 25px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        font-weight: bold;
+        white-space: nowrap;
+        display: inline-block;
+        transition: all 0.3s ease;
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateX(100px); /* Dịch chuyển ra ngoài bên phải 100px */
+        animation: slideInFromRight 1s ease-out forwards; /* Hiệu ứng di chuyển từ phải vào */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideInFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .contact-button:hover {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+
+    .specializations {
+        padding: 10px;
+        background-color: #ffffff; 
+        padding-bottom: 1000px;
+        
+
+    }
+   
+    .specializations h2 {
+        margin-left: -120px;
+        margin-top: 18px;
+        font-size: 45px;
+        color: #000000;
+       
+    }
+
+
 }
