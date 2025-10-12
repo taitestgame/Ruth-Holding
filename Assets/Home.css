@@ -266,7 +266,7 @@ body {
         margin-bottom: 20px;
         opacity: 0; /* Ban đầu ẩn đi */
         transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
-        animation: slideDown 1s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
         animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
     }
    
@@ -294,7 +294,7 @@ body {
         margin-bottom: 20px;
         opacity: 0; /* Ban đầu ẩn đi */
         transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
-        animation: slideUp 1s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
         animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
     }
    
@@ -327,7 +327,7 @@ body {
         transition: all 0.3s ease;
         opacity: 0; /* Ban đầu ẩn đi */
         transform: translateX(100px); /* Dịch chuyển ra ngoài bên phải 100px */
-        animation: slideInFromRight 1s ease-out forwards; /* Hiệu ứng di chuyển từ phải vào */
+        animation: slideInFromRight 2s ease-out forwards; /* Hiệu ứng di chuyển từ phải vào */
         animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
     }
    
@@ -440,148 +440,148 @@ body {
     background: rgba(0, 0, 0, 0.65);
     }
 
-.mission-vision {
-margin-left: -1030px;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 40px;
-  padding: 40px 60px;
-}
+    .mission-vision {
+    margin-left: -1030px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    padding: 40px 60px;
+    }
 
-/* ----------- PHẦN MISSION ----------- */
-.mission {
-  flex: 1.2;
-  background-color: #fff;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
+    /* ----------- PHẦN MISSION ----------- */
+    .mission {
+    flex: 1.2;
+    background-color: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-.mission img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    .mission img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    }
+
+    /* ----------- PHẦN VISION ----------- */
+    .vision {
+    flex: 0.5;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 500px;
+    }
+
+    /* Ảnh nền có hiệu ứng đứng yên */
+    .vision img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    transform: translateY(calc(var(--scroll, 0) * -0.3px));
+    will-change: transform;
+    z-index: 0;
+    }
+
+    /* Overlay phủ nhẹ để chữ nổi bật */
+    .vision::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+    }
+
+    /* CHỮ TRÊN ẢNH */
+    .vision p {
+    position: absolute;
+    top: 35%;               /* vị trí dọc ảnh */
+    left: 10%;              /* dịch qua phải một chút */
+    transform: translate(0%, -50%);
+    color: #fff;
+    font-size: 50px;        /* to, rõ ràng như hình bạn gửi */
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    z-index: 3;             /* 🔥 đảm bảo nằm trên overlay & ảnh */
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* làm nổi chữ hơn */
+    opacity: 0; /* Ban đầu ẩn đi */
+            transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+            animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
+            animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+        }
+
+
+
+    /* NÚT */
+    .contact {
+    position: absolute;
+    bottom: 15%;
+    right: 200px;
+    padding: 14px 30px;
+    background-color: #f5f4f4;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    z-index: 2;
+    transition: all 0.3s ease;/* CHỮ TRÊN ẢNH */
+    opacity: 0; /* Ban đầu ẩn đi */
+            transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+            animation: slideUp 1s ease-out forwards; /* Hiệu ứng sổ lên */
+            animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+
+
+
+    .contact:hover {
+    background-color: #36093c;
+    color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+
+.content_2 {
+
+      margin-left: -1030px;    /* ép về flex thay vì block */
+  justify-content: flex-start !important;  /* 🔥 căn sang trái */
   
+  gap: 15px;
+  margin-top: 50px;
+  /* 🔥 thêm khoảng lề trái nếu muốn */
+  box-sizing: border-box;
 }
 
-/* ----------- PHẦN VISION ----------- */
-.vision {
-  flex: 0.5;
-  position: relative;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  height: 500px;
-}
-
-/* Ảnh nền có hiệu ứng đứng yên */
-.vision img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
-  transform: translateY(calc(var(--scroll, 0) * -0.3px));
-  will-change: transform;
-  z-index: 0;
-}
-
-/* Overlay phủ nhẹ để chữ nổi bật */
-.vision::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
-}
-
-/* CHỮ TRÊN ẢNH */
-.vision p {
-  position: absolute;
-  top: 35%;               /* vị trí dọc ảnh */
-  left: 10%;              /* dịch qua phải một chút */
-  transform: translate(0%, -50%);
-  color: #fff;
-  font-size: 50px;        /* to, rõ ràng như hình bạn gửi */
+/* Tiêu đề */
+.content_2 h1 {
+  font-size: 50px;
+  color: #000;
   font-weight: 700;
-  line-height: 1.1;
-  text-align: left;
   margin: 0;
-  z-index: 3;             /* 🔥 đảm bảo nằm trên overlay & ảnh */
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* làm nổi chữ hơn */
+}
+
+/* Nút mũi tên */
+.content_2 .arrow-btn {
+  background: none;
+  border: none;
+  font-size: 38px;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.content_2 .arrow-btn:hover {
+  transform: translateX(8px);
 }
 
 
-
-/* NÚT */
-.contact-button {
-  position: absolute;
-  bottom: 15%;
-  right: 50px;
-  padding: 14px 30px;
-  background-color: #f5f4f4;
-  color: #000000;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  z-index: 2;
-  transition: all 0.3s ease;/* CHỮ TRÊN ẢNH */
-.vision p {
-  position: absolute;
-  top: 35%;               /* vị trí dọc ảnh */
-  left: 10%;              /* dịch qua phải một chút */
-  transform: translate(0%, -50%);
-  color: #fff;
-  font-size: 50px;        /* to, rõ ràng như hình bạn gửi */
-  font-weight: 700;
-  line-height: 1.1;
-  text-align: left;
-  margin: 0;
-  z-index: 3;             /* 🔥 đảm bảo nằm trên overlay & ảnh */
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* làm nổi chữ hơn */
-opacity: 0; /* Ban đầu ẩn đi */
-        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
-        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
-        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
-    }
-   
-    /* Định nghĩa hiệu ứng animation */
-    @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-  opacity: 0; /* ẩn lúc đầu */
-  transform: translate(-100%, 50px); /* dịch sang trái và xuống */
-  animation: slideUp 1s ease-out forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translate(-100%, 50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-100%, 0);
-  }
-}
-
-.contact-button:hover {
-  background-color: #36093c;
-  color: #ffffff;
-  border: 1px solid #000000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
 
 
 
