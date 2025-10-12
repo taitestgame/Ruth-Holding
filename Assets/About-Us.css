@@ -269,19 +269,131 @@ body {
   align-items: stretch;         /* cho cả hai khối cao bằng nhau */
   justify-content: space-between;
   padding:  0px;  
-  height: 500px;   }
+  height: 250px;   }
   .text-box2 h2{
     font-size: 44px;
     padding: 0px 30px;
+    line-height: 1.8;
   }
 .text-box2 p{
     font-size: 18px;
+    line-height: 1.8;
 }
 .about-container2 section{display: flex;
   align-items: stretch;         /* cho cả hai khối cao bằng nhau */
   justify-content: space-between;
   padding:  0px;  
-  height: 500px; }
+  height: 300px; }
+ 
+  .text-box3 p{
+    font-size: 18px;
+        text-align: center;
+        padding: 0px 40px 0px 0px;
+  }
+  .text-box3 div {
+    padding: 0px 100px;
+  }
+:root {
+    --primary-color: #090111; /* Màu tím đậm */
+    --light-gray: #555;
+}
+
+/* --- Bố cục chính 2 cột (Flexbox) --- */
+.main-content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Cột bên trái: Our Presence --- */
+.left-column {
+    flex: 0 0 40%; /* Chiếm khoảng 40% chiều rộng */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-right: 50px;
+}
+
+.section-title {
+    font-size: 4rem; /* Kích thước chữ lớn */
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.1; /* Khoảng cách dòng hẹp */
+    margin: 0;
+}
+
+/* Icon Mũi tên tròn */
+.arrow-icon-container {
+    position: absolute;
+    right: 0; /* Đẩy sang phải cột */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* --- Cột bên phải: Manufacturing Excellence --- */
+.right-column {
+    flex: 0 0 55%; /* Chiếm khoảng 55% chiều rộng */
+    padding-left: 50px;
+    /* Có thể thêm border-left để ngăn cách với cột bên trái nếu cần */
+}
+
+.main-title {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 50px 0; /* Khoảng cách dưới tiêu đề */
+}
+
+/* --- Thông tin Liên hệ (Address, Contact Us, Email Us) --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Khoảng cách giữa các nhóm thông tin */
+}
+
+.info-item {
+    display: flex;
+    align-items: baseline;
+    line-height: 1.5;
+}
+
+/* Nhãn bên trái (Address, Contact Us, Email Us) */
+.label {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--light-gray); /* Màu hơi xám cho nhãn */
+    width: 140px; /* Thiết lập chiều rộng cố định cho nhãn */
+    flex-shrink: 0;
+}
+
+/* Giá trị bên phải (Địa chỉ, SĐT, Email) */
+.value {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #000000; /* Màu đen */
+    text-decoration: none; /* Bỏ gạch chân cho link (SĐT, Email) */
+}
+
+/* Khoảng cách lớn hơn giữa các nhóm */
+.contact-info .info-item:nth-child(1),
+.contact-info .info-item:nth-child(2) {
+    margin-bottom: 20px; 
+}
 
 
 
@@ -358,6 +470,45 @@ body {
        
         stroke: currentColor;
        
+    }
+    .main-content-container {
+        flex-direction: column; /* Xếp thành 1 cột */
+    }
+
+    .left-column, .right-column {
+        flex: 0 0 100%;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+        display: inline-block; /* Để mũi tên có thể nằm ngay cạnh */
+        margin-right: 20px;
+    }
+
+    .arrow-icon-container {
+        position: static; /* Đưa mũi tên vào luồng văn bản */
+        transform: none;
+        display: inline-flex;
+        vertical-align: top;
+        margin-top: 10px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .info-item {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .label {
+        width: 100%; 
+        margin-bottom: 5px; 
+        font-weight: 700;
     }
    
 }
