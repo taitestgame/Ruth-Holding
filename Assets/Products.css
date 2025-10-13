@@ -100,7 +100,7 @@ body {
 .navbar .search svg {
     display: block;
 }
-/* ================= PHẦN ẢNH & NỘI DUNG (Layout 2 cột) ================= */
+
 
 
 
@@ -207,11 +207,472 @@ body {
         gap: 90px;
     }
     .search { gap: 15px; }
+
+
+    /* PHẦN 1 */
+
+
+    .two-column-layout {
+        margin-top: 100px;
+        display: flex; /* Sử dụng Flexbox để tạo bố cục cột */
+        width: 100%;
+        /* Tùy chỉnh chiều cao nếu bạn muốn nó chiếm toàn bộ màn hình */
+        min-height: 600px;
+        gap: 10px;
+    }
+
+    /* Cột Bên Trái: Văn bản và tiêu đề */
+    .text-column {
+        flex: 1; /* Cho phép cột này chiếm 1 phần không gian */
+        background-color: #2c253b; /* Màu nền giống như trong hình (màu tím đậm) */
+        color: white; /* Màu chữ trắng */
+        padding: 30px 5%; /* Thêm padding (khoảng cách lề) */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    }
+
+    /* Tiêu đề chính */
+    .main-title {
+        font-size: 4.5vw; /* Kích thước chữ linh hoạt theo màn hình */
+        line-height: 1.1;
+        margin-bottom: 30px;
+        font-weight: 700; /* In đậm */
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+    }
    
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Đoạn mô tả */
+    .description {
+        font-size: 1.1vw; /* Kích thước chữ linh hoạt */
+        line-height: 1.6;
+        max-width: 550px; /* Giới hạn chiều rộng để văn bản dễ đọc hơn */
+    opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Cột Bên Phải: Hình ảnh */
+    .image-column {
+        height: 719px;
+        flex: 3.5; /* Cho phép cột này chiếm nhiều không gian hơn cột văn bản */
+        background-color: #f0f0f0; /* Màu nền nhẹ nếu hình ảnh không chiếm hết */
+        overflow: hidden; /* Đảm bảo hình ảnh không tràn ra ngoài */
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cắt và zoom hình ảnh để lấp đầy toàn bộ cột */
+        display: block;
+    }
+
+   
+    /* phần 2 */
+    .solution-section {
+           width: 100%;
+        max-width: 1200px; /* Giới hạn chiều rộng nếu cần */
+     
+        display: flex; /* Bật Flexbox cho hai cột */
+        justify-content: space-between; /* Đẩy hai cột ra xa nhau */
+        align-items: flex-start; /* Căn lề trên (top) */
+        margin: 30px 0 40px 0;/* Căn giữa section và thêm margin trên */
+        padding: 0 3%; /* Thêm padding ngang cho màn hình nhỏ */
+    }
+
+    /* Cột Bên Trái: Tiêu đề và Nút */
+    .left-column {
+        flex: 0 0 45%; /* Chiếm khoảng 45% chiều rộng */
+    }
+
+    /* Container cho Tiêu đề và Nút Mũi Tên */
+    .content_5 {
+        display: flex;
+        align-items: center; 
+        gap: 80px;
+        /* Xóa margin-top: 40px và box-sizing không cần thiết ở đây */
+        box-sizing: border-box; /* Giữ lại nếu bạn muốn */
+    }
+
+    .content_5 h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 55px; /* Tăng kích thước H1 để phù hợp hơn với ảnh */
+        line-height: 1.1;
+        font-weight: 600;
+        color: #1E1536;
+        margin: 0;
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #1E1536;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        /* Có thể thêm icon mũi tên thực tế ở đây */
+    }
+
+    /* Cột Bên Phải: Đoạn mô tả */
+    .right-column {
+        flex: 0 0 50%; /* Chiếm khoảng 50% chiều rộng */
+        /* Xóa hoàn toàn margin-top: -80px và margin-right: 475px */
+    }
+
+    .content_6_p {
+        font-size: 17px; /* Tăng kích thước font để dễ đọc hơn */
+        color: #1E1536; /* Màu chữ hơi nhạt hơn #1E1536 */
+        line-height: 1.7;
+        max-width: none; /* Không cần max-width vì nó đã nằm trong cột 50% */
+
+        margin: 0;
+        font-weight: 600;
+        padding-top: 30px; 
+   opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+/* Phần 3 */
+    .standalone-services-list-section {
+        /* Thiết lập container lớn nhất */
+        width: 100%;
+        max-width: 1420px; /* Căn chỉnh chiều rộng tối đa với khối nội dung phía trên */
+        margin: 40px 0 80px 3%; /* Khoảng cách trên 40px, dưới 80px, căn giữa */
+        padding: 0 0%;
+    }
+
+    .services-list-container {
+        /* Container này dùng để kiểm soát vị trí và chiều rộng của danh sách */
+        width: 100%; /* Chiếm toàn bộ chiều rộng của section cha */
+        max-width: 1800px; 
+    
+    }
+
+    /* Danh sách (UL) */
+    .services-list {
+        list-style: none; /* Bỏ chấm đầu dòng */
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Các mục trong danh sách (LI) */
+    .services-list li {
+        padding: 20px 0; /* Khoảng cách trên và dưới cho mỗi mục */
+        /* Tạo đường kẻ ngang dưới mỗi mục */
+        border-bottom: 1.5px solid #1E1536; /* Màu xám nhạt cho đường kẻ mảnh */
+    }
+
+    /* Bỏ đường kẻ ngang dưới mục cuối cùng */
+    .services-list li.last-item {
+        border-bottom: none;
+
+    }
+
+    /* Liên kết (chữ) */
+    .services-list li a {
+        text-decoration: none; /* Bỏ gạch chân của liên kết */
+        color: #1E1536; /* Màu chữ tối */
+        font-family: 'Montserrat', sans-serif; 
+        font-size: 18px; /* Kích thước chữ vừa phải */
+        font-weight: 600; /* Độ đậm vừa phải */
+        display: block; /* Giúp liên kết chiếm toàn bộ chiều rộng LI */
+        line-height: 1.3;
+    }
+
+/* phần 4 */
+
+
+.banner-container {
+    display: flex;
+    width: 100%;
+    max-width: 1700px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+/* Phần hình ảnh */
+.vision {
+    flex: 0.5;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 450px;
+    }
+
+    /* Ảnh nền có hiệu ứng đứng yên */
+    .vision img {
+    position: absolute;
+    top: 5;
+    left: -5;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    transform: translateY(calc(var(--scroll, 0) * -0.3px));
+    will-change: transform;
+    z-index: 0;
+    }
+
+    /* Overlay phủ nhẹ để chữ nổi bật */
+
+
+
+        
+    /* Phần nội dung văn bản */
+    .banner-content {
+        flex: 1.2;
+        background-color: #271E3C;
+        color: white;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 150px;
+        /* Vẫn giữ min-height để cột content kéo dãn cột ảnh */
+    }
+
+
+    .banner-content h1 {
+        font-size: 58px;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: left;
+        margin-left: 150px;
+    opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    .btn-contact {
+        margin-left: 150px;
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #f5f4f4;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+    opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn-contact:hover {
+        background-color: #2c253b;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2)}
+
+
+/* phần cuối */
+
+
+.footer {
+        
+        margin-top: -22px;
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
+    }
+
+    .footer-container {
+        display: flex; /* Sử dụng Flexbox để chia cột */
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+        max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
+    }
+
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
+    }
+
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
+    }
+
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: -90px;
+        /* Giả sử màu logo là màu xanh/cyan */
+    }
+
+
+
+    .company-description {
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+        margin-left: -87px; /* Giới hạn chiều rộng mô tả */
+    }
+
+    /* Cột Liên hệ và Links */
+    .contact-column {
+        flex-basis: 60%; /* Cột bên phải rộng hơn một chút */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-left: -87px; /* Căn lề phải toàn bộ nội dung trong cột */
+        
+
+        
+    }
+
+    .footer-links {
+        justify-content: flex-start !important; 
+        
+        margin-right: 100px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+        justify-content: flex-start !important; 
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    /* Biểu tượng mạng xã hội */
+    .social-icons {
+        margin-top: 10px;
+        justify-content: flex-start !important; 
+        margin-right: 265px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+        /* Icon X, LinkedIn, Facebook. Cần thay thế bằng Font Awesome hoặc SVG */
+    }
 
 
 
 
+    /* Bản quyền */
+    .copyright {
+        margin-left: -10px;
+        margin-top: 30px;
+        text-align: right; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
 
 
 
@@ -287,8 +748,10 @@ body {
         stroke: currentColor;
        
     }
-   
+
 }
+
+
 
 
 
@@ -377,4 +840,370 @@ body {
     }
    
     .mobile-menu-icon { display: block; }
+
+/* PHẦN 1 */
+    
+    .two-column-layout {
+            margin-top: 170px;
+            
+            width: 100%;
+
+        }
+    .text-column {
+            flex: 1; /* Cho phép cột này chiếm 1 phần không gian */
+            background-color: #2c253b; /* Màu nền giống như trong hình (màu tím đậm) */
+            color: white; /* Màu chữ trắng */
+            padding: 20px 5%; /* Thêm padding (khoảng cách lề) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+        }
+    .main-title {
+            font-size: 40px; /* Kích thước chữ linh hoạt theo màn hình */
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 700; /* In đậm */
+
+        }
+        .main-title br {
+        display: none; /* Ẩn thẻ <br>, do đó nó không còn tạo ra ngắt dòng */
+    }
+    .description {
+            font-size: 15px; /* Kích thước chữ linh hoạt */
+            line-height: 1.6;
+            max-width: 550px; 
+            font-weight: 700;
+
+    }
+    
+    .image-column img {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+
+/* PHẦN 2 */
+
+
+    .content_5 {
+        display: flex;
+        /* Căn chỉnh theo chiều dọc: Mũi tên và chữ cùng hàng */
+        align-items: flex-start; /* Căn chỉnh đầu dòng (giữ H1 và nút ở trên) */
+        /* Quan trọng: Đẩy H1 và nút ra hai phía */
+        justify-content: space-between; 
+        margin-bottom: 30px;
+        padding: 30px; 
+        padding-left: 20px /* Khoảng cách giữa header và đoạn văn */
+    }
+
+    .content_5 h1 {
+
+        font-family: 'Montserrat', sans-serif;
+        /* Tăng kích thước H1 để chữ xuống dòng hợp lý */
+        font-size: 32px; 
+        line-height: 1.2;
+        font-weight: 600;
+        color: #1E1536;
+        margin-bottom: 30px;
+        text-align: left;
+        /* Cho phép H1 chiếm không gian cần thiết, không bị nút đẩy */
+        max-width: 100%;
+        padding-left:-15px ;
+        
+    }
+
+    /* Ẩn thẻ <br> nếu có trong H1 */
+    .content_5 br{
+        display: none;
+    }
+
+    /* 2. Nút Mũi Tên */
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #999; /* Màu viền nhẹ nhàng hơn một chút */
+        border-radius: 50%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        font-size: 20px;
+        line-height: 1;
+        color: #1E1536;
+
+        flex-shrink: 0; 
+    }
+
+    /* 3. Đoạn Văn Bản (P) */
+    .content_6_p {
+        font-size: 16px; /* Tăng kích thước font để dễ đọc hơn */
+        color: #1E1536; /* Màu chữ gần màu đen hơn */
+        line-height: 1.6; /* Tăng line-height cho dễ đọc */
+        max-width: 100%; 
+        font-weight: normal; /* Font weight bình thường, không đậm */
+        margin-top: -60px;
+        padding-left: 20px ;
+        font-weight: 600; /* Đã có margin-bottom trên .content_5, không cần padding-top */
+    }
+
+
+/* phần 3 */
+
+.standalone-services-list-section {
+        /* Thiết lập container lớn nhất */
+        width: 100%;
+        max-width: 1420px; /* Căn chỉnh chiều rộng tối đa với khối nội dung phía trên */
+        margin: 40px 0 80px 3%; /* Khoảng cách trên 40px, dưới 80px, căn giữa */
+        padding: 0 0%;
+    }
+
+    .services-list-container {
+        /* Container này dùng để kiểm soát vị trí và chiều rộng của danh sách */
+        width: 100%; /* Chiếm toàn bộ chiều rộng của section cha */
+        max-width: auto; 
+    
+    }
+
+    /* Danh sách (UL) */
+    .services-list {
+        list-style: none; /* Bỏ chấm đầu dòng */
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Các mục trong danh sách (LI) */
+    .services-list li {
+        padding: 20px 0; /* Khoảng cách trên và dưới cho mỗi mục */
+        /* Tạo đường kẻ ngang dưới mỗi mục */
+        border-bottom: 1.5px solid #1E1536; /* Màu xám nhạt cho đường kẻ mảnh */
+    }
+
+    /* Bỏ đường kẻ ngang dưới mục cuối cùng */
+    .services-list li.last-item {
+        border-bottom: none;
+
+    }
+
+    /* Liên kết (chữ) */
+    .services-list li a {
+        text-decoration: none; /* Bỏ gạch chân của liên kết */
+        color: #1E1536; /* Màu chữ tối */
+        font-family: 'Montserrat', sans-serif; 
+        font-size: 18px; /* Kích thước chữ vừa phải */
+        font-weight: 600; /* Độ đậm vừa phải */
+        display: block; /* Giúp liên kết chiếm toàn bộ chiều rộng LI */
+        line-height: 1.3;
+    }
+
+
+/* phần 4 */
+
+
+    .vision img {
+    margin-top: -10px;
+        width: 100%;
+        height: 100%;
+
+    }
+
+     .banner-content {
+        margin-top: 10px;
+        flex: 1.2;
+        background-color: #271E3C;
+        color: white;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 150px;
+        /* Vẫn giữ min-height để cột content kéo dãn cột ảnh */
+    }
+
+    .banner-content h1 {
+        font-size: 34px;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: left;}
+
+    .banner-content h1 br{
+       display: none; 
+    }
+    
+
+
+    .btn-contact {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #f5f4f4;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+
+    }
+
+.footer {
+    margin-top: 15px;
+        
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
+    }
+
+    .footer-container {
+
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
+    }
+
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
+    }
+
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
+    }
+
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: 80px;
+        /* Giả sử màu logo là màu xanh/cyan */
+    }
+
+    .section-divider {
+
+        /* Đảm bảo nó là một đường thẳng */
+        border: none;
+        height: 1px; /* Độ dày của đường viền */
+        
+        /* Màu tím đậm như trong hình */
+        background-color: #17113e; 
+        margin-top: 30px;
+        /* Thiết lập chiều rộng (Ví dụ: 80% chiều rộng của khối cha) */
+        width: 100%; 
+
+    }
+
+
+
+
+    .company-description {
+        margin-top: 30px;
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+
+    }
+
+    /* Cột Liên hệ và Links */
+    .contact-column {
+
+
+        flex-direction: column;
+
+        
+    }
+
+    .footer-links {      
+        margin-left: -20px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    .social-icons {
+        margin-top: 10px;
+ 
+        margin-left: -10px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+   
+    }
+
+
+
+
+    /* Bản quyền */
+    .copyright {
+        margin-left: 35px;
+        margin-top: 30px;
+        text-align: left; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -217,111 +217,124 @@ body {
 }
 
 
-.text-box1 {
-  background-color: rgb(40,26,57);
-  color: #f0f0f0;
-  padding: 50px;
-  flex: 0 0 30%;                /* chiếm 40% chiều ngang */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+.two-column-layout {
+        margin-top: 100px;
+        display: flex; /* Sử dụng Flexbox để tạo bố cục cột */
+        width: 100%;
+        /* Tùy chỉnh chiều cao nếu bạn muốn nó chiếm toàn bộ màn hình */
+        min-height: 400px;
+        gap: 10px;
+    }
 
-.text-box1 h1 {
-  font-size: 64px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
+    /* Cột Bên Trái: Văn bản và tiêu đề */
+    .text-column {
+        flex: 1; /* Cho phép cột này chiếm 1 phần không gian */
+        background-color: #2c253b; /* Màu nền giống như trong hình (màu tím đậm) */
+        color: white; /* Màu chữ trắng */
+        padding: 30px 5%; /* Thêm padding (khoảng cách lề) */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    }
 
-.text-box1 p {
-  text-align: center;
-  margin: 0;
-}
-
-.image-box1 {
-  flex: 1;                      /* chiếm hết phần còn lại */
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-.image-box1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;             /* ảnh phủ kín khối mà không méo */
-  display: block;
-}
-/* --- Khối Văn Bản Chính --- */
-/* --- Khối Chính Nền Tím Đậm --- */
-.hero-block {
-    /* Màu nền tím đậm (giá trị gần nhất với hình) */
-    background-color: #3b1f5f; 
-    
-    /* Thiết lập kích thước và giới hạn khối */
+    /* Tiêu đề chính */
+    .main-title {
+        margin-left: 40px;
+        font-size:54px; 
+    line-height: 1.3;
     max-width: 550px;
-    padding: 70px 40px; /* Padding lớn hơn để tạo khoảng trống */
-    box-sizing: border-box; 
-    
-    /* Căn lề trái theo yêu cầu của hình */
-    text-align: left;
-}
+        font-weight: 700; /* In đậm */
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(-50px); /* Dịch chuyển lên trên 50px */
+        animation: slideDown 2s ease-out forwards; /* Hiệu ứng sổ xuống */
+        animation-delay: 0.3s; /* Đợi 0.3 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-/* --- Tiêu đề Lớn (Ruth Holding) --- */
-.main-heading {
-    /* Kích thước chữ rất lớn */
-    font-size: 5rem; 
-    
-    /* In đậm */
-    font-weight: 700; 
-    
-    /* Màu chữ trắng */
-    color: #ffffff; 
-    
-    /* Khoảng cách giữa các dòng chữ "Ruth" và "Holding" */
-    line-height: 1; 
-    
-    /* Khoảng cách lớn phía dưới tiêu đề */
-    margin: 0 0 40px 0; 
-}
+    /* Đoạn mô tả */
+    .description {
+        margin-top: -10px;
+        margin-left: 40px;
+        font-size: 13px; /* Kích thước chữ linh hoạt */
+        line-height: 1.6;
+        max-width: 550px; /* Giới hạn chiều rộng để văn bản dễ đọc hơn */
+    opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+        animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+        animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+    }
+   
+    /* Định nghĩa hiệu ứng animation */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-/* --- Đoạn Văn Bản Giới Thiệu --- */
-.description-text-intro {
-    /* Kích thước chữ vừa phải */
-    font-size: 1.15rem; 
-    
-    /* Độ đậm của chữ (giống với đoạn văn bản in đậm) */
-    font-weight: 500; 
-    
-    /* Màu chữ trắng */
-    color: #ffffff; 
-    
-    /* Khoảng cách giữa các dòng */
-    line-height: 1.5;
-    
-    margin: 0;
-}
+    /* Cột Bên Phải: Hình ảnh */
+    .image-column {
+        height: 550px;
+        flex: 3.5; /* Cho phép cột này chiếm nhiều không gian hơn cột văn bản */
+        background-color: #f0f0f0; /* Màu nền nhẹ nếu hình ảnh không chiếm hết */
+        overflow: hidden; /* Đảm bảo hình ảnh không tràn ra ngoài */
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cắt và zoom hình ảnh để lấp đầy toàn bộ cột */
+        display: block;
+    }
+/* phan 2/ */
+
+
+
 :root {
-    --primary-color: #4a148c; /* Màu tím đậm cho chữ */
-    --line-color: #d1d1d1; /* Màu xám nhạt cho đường kẻ */
+    /* Main text and accent color (A slightly muted purple/dark violet) */
+    /* Based on the image's purple, a color like #5e43a6 or similar */
+    --primary-color: #000000; 
+    /* Color for the separator lines (A light gray) */
+    --line-color: #000000; 
+    /* Color for the contact values (Address, Phone, Email) - dark gray/black */
+    --value-color: #000000; 
 }
 
-/* --- Khối Danh Sách Liên Hệ --- */
+
 .contact-list-section {
+    margin-top: 30px;
+    margin-left: 50px;
     width: 100%;
-    max-width: 800px;
-    background-color: #ffffff; /* Hoặc không cần background-color nếu body đã có */
+    max-width: 1400px;
+    /* The background is likely the background of the main container, not this list itself, 
+       but keeping it white ensures it sits on a lighter background if needed. */
+    background-color: #ffffff; 
     padding: 0;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    padding: 20px 0;
+
+    padding: 25px 0; 
     
-    /* Đường kẻ phân chia ở dưới mỗi item */
-    border-bottom: 1px solid var(--line-color);
+    color: #000000;
+    border-bottom: 1.5px solid var(--line-color);
 }
 
 /* Loại bỏ đường kẻ dưới cho item cuối cùng */
@@ -331,25 +344,27 @@ body {
 }
 
 
-/* --- Các thành phần trong mỗi Item --- */
-
-/* Nhãn (Location, Phone, Email) */
 .contact-label {
-    flex: 0 0 150px; /* Chiếm khoảng 150px chiều rộng cố định */
+    /* Adjust width for 'Location' alignment */
+    flex: 0 0 100px; 
     font-size: 1.15rem;
-    font-weight: 700; /* In đậm */
-    color: var(--primary-color);
-    text-transform: capitalize; /* Viết hoa chữ cái đầu */
+
+   font-weight: 700; /* In đậm */; /* Lighter than before, but still bold for a label */
+    color: #000000; /* Darker text color for the label */
+    text-transform: capitalize; 
 }
 
-/* Icon Mũi Tên Tròn */
+
 .contact-icon-wrapper {
-    flex-shrink: 0; /* Ngăn icon bị co lại */
-    margin: 0 30px; /* Khoảng cách giữa nhãn và giá trị */
+    flex-shrink: 0; 
+    /* Adjust margin to match the image's spacing */
+    margin: 0 40px; 
     
-    width: 30px;
-    height: 30px;
+    /* Create the white circle with a purple border */
+    width: 35px;
+    height: 35px;
     border: 1px solid var(--primary-color);
+    background-color: #ffffff; /* Explicitly white background */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -358,75 +373,54 @@ body {
 }
 
 .contact-icon {
+    /* Color of the arrow inside the circle */
     color: var(--primary-color);
-    font-size: 0.8rem;
+    font-size: 1rem; /* Slightly larger icon */
 }
 
 /* Giá trị (Địa chỉ, SĐT, Email) */
 .contact-value {
-    flex-grow: 1; /* Cho phép giá trị chiếm phần còn lại */
+    flex-grow: 1; 
     font-size: 1.15rem;
-    font-weight: 500;
-    color: #333; /* Màu chữ tối */
-    text-decoration: none; /* Bỏ gạch chân cho link SĐT và Email */
-}
-.about-container-1 section {
-  display: flex;
-  align-items: stretch;         /* cho cả hai khối cao bằng nhau */
-  justify-content: space-between;
-  padding: 0px 50px;  
-  height: 500px;                 /* bỏ padding ngoài */
-}
-:root {
-    --primary-dark: #3b1f5f; /* Nền tím đậm */
-    --primary-light: #b3e5fc; /* Nền xanh nhạt */
-    --text-light: #ffffff; /* Chữ trắng */
-    --text-dark: #3b1f5f; /* Chữ tím đậm */
-    --input-line: #a689d0; /* Đường kẻ input (tím nhạt hơn) */
+    font-weight: 600;
+    color: #000000; /* Lighter color than label/icon for the actual value */
+    text-decoration: none; 
 }
 
-/* --- Bố cục chính 2 cột (Flexbox) --- */
-.contact-page-container {
-    display: flex;
-    width: 100vw;
-    min-height: 100vh;
-}
 
-/* --- Cột Trái: Get In Touch (Nền Xanh Nhạt) --- */
-.left-section {
-    flex: 0 0 40%; /* Chiếm khoảng 40% */
-    background-color: var(--primary-light);
-    padding: 100px 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-}
 
-.contact-title {
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1;
+
+
+
+
+
+/* --- Khối Bản Đồ --- */
+.map-container {
+    width: 100%;
+    /* Đảm bảo không có padding xung quanh bản đồ */
+    padding: 0; 
     margin: 0;
 }
 
-.arrow-icon-container-contact {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--text-dark);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    cursor: pointer;
+.map-container iframe {
+    /* Đảm bảo iframe chiếm toàn bộ chiều rộng của khối cha (.map-container) */
+    display: block;
+    width: 100%;
+    height: 450px; /* Chiều cao cố định như yêu cầu */
+    border: 0;
 }
 
-.contact-icon-arrow {
-    color: var(--text-dark);
-    font-size: 1.1rem;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 /* --- Cột Phải: Form Liên Hệ (Nền Tím Đậm) --- */
 .right-section {
@@ -530,21 +524,24 @@ textarea {
 .submit-button:hover {
     background-color: #e0e0e0;
 }
-/* --- Khối Bản Đồ --- */
-.map-container {
-    width: 100%;
-    /* Đảm bảo không có padding xung quanh bản đồ */
-    padding: 0; 
-    margin: 0;
-}
 
-.map-container iframe {
-    /* Đảm bảo iframe chiếm toàn bộ chiều rộng của khối cha (.map-container) */
-    display: block;
-    width: 100%;
-    height: 450px; /* Chiều cao cố định như yêu cầu */
-    border: 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

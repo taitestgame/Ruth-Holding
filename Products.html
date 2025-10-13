@@ -48,9 +48,117 @@
     </header>
 
 
-    <main style="height:2000px; background:#ffffff;">
-        <p style="padding:200px;">Kéo trang để xem hiệu ứng header...</p>
-    </main>
+        <div class="two-column-layout">
+            <div class="text-column">
+                <h1 class="main-title">
+                    Power <br>
+                    Up with <br>
+                    Ruth <br>
+                    Holding
+                </h1>
+                <p class="description">
+                    Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage; cable support systems; 19" rack & enclosures solutions and sheet metal fabrication. Our team is dedicated to providing top-quality products that meet safety standards and offer innovative solutions for various electrical needs.
+                </p>
+            </div>
+
+            <div class="image-column">
+                <img src="img/Products/img1.png" alt="Electrical enclosures and panels"> 
+            </div>
+        </div>
+
+
+        <section class="solution-section">
+            <div class="left-column">
+                <div class="content_5">
+                    <h1>Customized <br>Electrical <br>Solutions</h1>
+                    <div class="arrow-btn">→</div>
+                </div>
+            </div>
+            <div class="right-column">
+                <p class="content_6_p">
+                    We specialize in providing customized electrical solutions for a range of requirements, including tailored panel upgrades, wiring optimization, and fixture repairs. Our expertise covers vintage equipment restoration as well as the latest energy-efficient system installations, ensuring both functionality and aesthetic appeal.
+                </p>
+            </div>
+                
+            </div> </section>
+
+        <section class="standalone-services-list-section">
+            <div class="services-list-container">
+                <ul class="services-list">
+                    <li><a href="#">Medium and Low Voltage Panels</a></li>
+                    <li><a href="#">Cable Support Systems</a></li>
+                    <li><a href="#">19" Rack & Enclosures Solutions</a></li>
+                    <li><a href="#">Sheet Metal Fabrication</a></li>
+                    <li><a href="#">Consultation and Design Services</a></li>
+                    <li><a href="#">Quality Assurance</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <div class="banner-container">
+            <div class="vision">
+                   
+                    <img src="img/Products/img2.png" alt="Vision Image">
+                    
+                   
+                <script>
+                window.addEventListener('scroll', () => {
+                document.querySelectorAll('.vision').forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const scroll = rect.top;
+                    section.style.setProperty('--scroll', scroll);
+                });
+                });
+                </script>
+
+                </div>
+
+            <div class="banner-content">
+                <h1>Partner with Ruth<br> Holding for <br>Innovative Electrical <br>Solutions</h1>
+                 <a href="Contact.html" class="btn-contact">Get in Touch</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-column info-column">
+                        <div class="logo1">
+                            <img src="img/logo.png" alt="Ruth Holding Logo"> 
+                            
+                        </div>
+                        <p class="company-description">
+                            Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage; cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
+                        </p>
+                    </div>
+
+                    <div class="footer-column contact-column">
+                        <div class="footer-links">
+                            <a href="#">Accessibility Statement</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="phone">123-456-7890</p>
+                            <p class="email">info@ruthholding.com</p>
+                            <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
+                        </div>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
+                            <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
+                            <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 by Ruth Holding.
+            </div>
+
+
+    </div>
 
     <script src="script/Products.js"></script>
 

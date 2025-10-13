@@ -1,0 +1,217 @@
+/* =================== CẤU TRÚC TRANG =================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.contact-page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 60px 80px;
+  gap: 50px;
+}
+
+.left-section {
+  width: 35%;
+  background-color: #25173A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.contact-title {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.arrow-icon-container-contact {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  color: #25173A;
+}
+
+.contact-icon-arrow {
+  font-size: 24px;
+}
+
+.right-section {
+  width: 60%;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =================== FORM =================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #25173A;
+  box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #25173A;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #3a2762;
+}
+
+/* =================== Ô CHỌN QUỐC GIA =================== */
+.phone-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  transition: 0.2s;
+}
+
+.input-group:focus-within {
+  border-color: #25173A;
+  box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
+}
+
+.country-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4f4f4;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-right: 1px solid #ccc;
+  font-weight: 600;
+}
+
+.country-btn img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.toggle-icon {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+#phone {
+  border: none;
+  flex: 1;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* =================== DROPDOWN =================== */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 280px;
+  max-height: 250px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Hiệu ứng xuất hiện mượt */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.country-item img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.country-item:hover {
+  background-color: #f2f2f2;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 900px) {
+  .contact-page-container {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+  }
+}

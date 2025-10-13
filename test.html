@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* =================== CẤU TRÚC TRANG =================== */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .contact-page-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: 60px 80px;
+      gap: 50px;
+    }
+
+    .left-section {
+      width: 35%;
+      background-color: #25173A;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px;
+      border-radius: 20px;
+    }
+
+    .contact-title {
+      font-size: 60px;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+
+    .arrow-icon-container-contact {
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 15px;
+      color: #25173A;
+    }
+
+    .contact-icon-arrow {
+      font-size: 24px;
+    }
+
+    .right-section {
+      width: 60%;
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* =================== FORM =================== */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .half-width {
+      flex: 1;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #25173A;
+      box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-button {
+      background-color: #25173A;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .submit-button:hover {
+      background-color: #3a2762;
+    }
+
+    /* =================== Ô CHỌN QUỐC GIA =================== */
+    .phone-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      transition: 0.2s;
+    }
+
+    .input-group:focus-within {
+      border-color: #25173A;
+      box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
+    }
+
+    .country-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f4f4f4;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-right: 1px solid #ccc;
+      font-weight: 600;
+    }
+
+    .country-btn img {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+    }
+
+    .toggle-icon {
+      font-size: 10px;
+      margin-left: 4px;
+    }
+
+    #phone {
+      border: none;
+      flex: 1;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    /* =================== DROPDOWN =================== */
+    .dropdown {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 280px;
+      max-height: 250px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      overflow-y: auto;
+      z-index: 10;
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .country-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .country-item img {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+    }
+
+    .country-item:hover {
+      background-color: #f2f2f2;
+    }
+
+    /* =================== RESPONSIVE =================== */
+    @media (max-width: 900px) {
+      .contact-page-container {
+        flex-direction: column;
+        padding: 40px;
+      }
+
+      .left-section, .right-section {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-page-container">
+    
+    <div class="left-section">
+      <h2 class="contact-title">
+        Get In<br>Touch
+      </h2>
+      <div class="arrow-icon-container-contact">
+        <i class="fas fa-arrow-right contact-icon-arrow"></i>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <form class="contact-form">
+        
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="firstName">First name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group half-width">
+            <label for="lastName">Last name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <label for="phone">Phone</label>
+        <div class="phone-container">
+          <div class="input-group">
+            <button class="country-btn" id="toggleBtn" type="button">
+              <img id="flagImg" src="https://flagcdn.com/w20/vn.png" alt="">
+              <span id="dialCode">+84</span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <input id="phone" type="tel" placeholder="Nhập số điện thoại...">
+          </div>
+          <div class="dropdown" id="dropdown">Đang tải dữ liệu...</div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+
+        <div class="form-group full-width submit-group">
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    const dropdown = document.getElementById("dropdown");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const flagImg = document.getElementById("flagImg");
+    const dialCode = document.getElementById("dialCode");
+    let isOpen = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      dropdown.style.display = isOpen ? "block" : "none";
+      toggleBtn.querySelector(".toggle-icon").textContent = isOpen ? "▲" : "▼";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".phone-container")) {
+        dropdown.style.display = "none";
+        toggleBtn.querySelector(".toggle-icon").textContent = "▼";
+        isOpen = false;
+      }
+    });
+
+    async function loadCountries() {
+      try {
+        const res = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,idd,cca2");
+        const data = await res.json();
+
+        const countries = data
+          .filter(c => c.idd?.root)
+          .map(c => ({
+            name: c.name.common,
+            code: c.cca2.toLowerCase(),
+            flag: c.flags.svg || c.flags.png,
+            phone: c.idd.root + (c.idd.suffixes ? c.idd.suffixes[0] : "")
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+
+        renderDropdown(countries);
+      } catch (err) {
+        console.error("API lỗi:", err);
+        dropdown.innerHTML = "<p style='padding:10px;color:#ffcccc;'>Không tải được dữ liệu quốc gia!</p>";
+      }
+    }
+
+    function renderDropdown(countries) {
+      dropdown.innerHTML = "";
+      countries.forEach(country => {
+        const item = document.createElement("div");
+        item.className = "country-item";
+        item.innerHTML = `
+          <img src="${country.flag}" alt="">
+          <span>${country.name} (${country.phone})</span>
+        `;
+        item.addEventListener("click", () => {
+          flagImg.src = country.flag;
+          dialCode.textContent = country.phone;
+          dropdown.style.display = "none";
+          toggleBtn.querySelector(".toggle-icon").textContent = "▼";
+          isOpen = false;
+        });
+        dropdown.appendChild(item);
+      });
+    }
+
+    loadCountries();
+  </script>
+</body>
+</html>
