@@ -80,3 +80,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// Tìm nút Search của bạn — thêm id cho nó để dễ dùng:
+const searchBtn = document.querySelector(".search-button, #search-btn, .search"); 
+const popup = document.getElementById("search-popup");
+const closeBtn = document.getElementById("close-btn");
+
+searchBtn.addEventListener("click", () => {
+  popup.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  popup.classList.remove("active");
+});
+
+// Đóng popup khi click ra ngoài
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) popup.classList.remove("active");
+});
+document.querySelector(".show-results").addEventListener("click", () => {
+  window.location.href = "Sech-Results.html"; // 🔁 đổi "search.html" thành trang bạn muốn tới
+});
