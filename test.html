@@ -6,229 +6,455 @@
   <title>Contact Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+  <!-- Thay thế bằng nội dung của file CSS (styles.css) -->
   <style>
-    /* =================== CẤU TRÚC TRANG =================== */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
+/* * ==========================================================
+ * STYLESHEET CHO TRANG LIÊN HỆ (CONTACT PAGE STYLESHEET)
+ * ==========================================================
+ */
+
+/* =================== CẤU TRÚC TRANG =================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+
+  color: #333;
+  /* Sử dụng Custom Properties để dễ dàng quản lý màu */
+  --primary-color: #25173A; /* Tím đậm */
+  --accent-color: #3A4BFF; /* Xanh dương */
+  --text-light: white;
+  --text-dark: #333;
+}
+
+.contact-page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 60px 0px;
+  gap: 10px;
+  
+}
+
+.left-section {
+  width: 35%;
+  background-color: #9fc9ec;
+  color: #25173A;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Nội dung sẽ dồn lên phía trên */
+  padding-top: 80px;
+  padding: 50px;
+  border-radius: 5px;
+  border-right: 5px solid var(--text-light);
+  
+}
+
+.contact-title {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.arrow-icon-container-contact {
+  /* background-color: var(--primary-color);  <-- BỎ DÒNG NÀY ĐI HOẶC ĐẶT LÀ transparent */
+  background-color: transparent; /* Thay vì nền tím, làm nền trong suốt */
+  border: 2px solid #25173A;; /* THÊM VIỀN: viền màu trắng để nổi bật trên nền tím */
+  border-radius: 50%;
+  padding: 15px; /* Giữ nguyên padding */
+  display: flex; /* Thêm để căn giữa mũi tên */
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* Điều chỉnh kích thước nếu cần */
+  height: 30px; /* Điều chỉnh kích thước nếu cần */
+  box-sizing: content-box; /* Đảm bảo padding không ảnh hưởng đến width/height tổng thể */
+}
+
+.contact-icon-arrow {
+  font-size: 24px;
+  color: #25173A;; /* Màu mũi tên vẫn là trắng */
+  /* margin-left: -2px; */ /* Tùy chỉnh nhỏ để mũi tên cân đối hơn */
+}
+
+
+
+.right-section {
+  width: 60%;
+  background-color: var(--primary-color);
+  padding: 50px;
+  border-radius: 5px; /* Thống nhất bo tròn */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  /* Mặc định màu chữ của section này là trắng */
+  color: var(--text-light);
+}
+
+/* =================== FORM ELEMENTS =================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--text-light); /* Màu chữ trắng cho input thường (First Name, Email) */
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid var(--text-light);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Placeholder màu nhạt */
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  /* Thuộc tính cơ bản từ .btn-contact */
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #f5f4f4; /* Màu xám nhạt */
+  color: #000000; /* Màu chữ đen */
+  border: none;
+  text-decoration: none;
+  border-radius: 25px; /* Bo tròn mạnh */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+ 
+  /* Căn chỉnh trong Form */
+  margin-top: 20px;
+  align-self: flex-start; /* Giữ nút ở bên trái */
+ 
+  /* HIỆU ỨNG ANIMATION SLIDE UP (theo yêu cầu) */
+  opacity: 0; /* Ban đầu ẩn đi */
+  transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+  animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+  animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+}
+
+.submit-button:hover {
+  /* Hiệu ứng hover từ .btn-contact */
+  background-color: #2c253b; /* Màu nền tím đậm khi hover */
+  color: #ffffff; /* Màu chữ trắng */
+  border: 1px solid #ffffff; /* Thêm viền trắng */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Đổ bóng */
+  transform: translateY(0); /* Đảm bảo nút không bị dịch chuyển */
+}
+
+/* Định nghĩa hiệu ứng animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================== PHONE INPUT & DROPDOWN =================== */
+
+.hidden {
+  display: none !important;
+}
+
+.phone-container {
+  position: relative;
+  width: 100%;
+  border: none;
+  /* Đường kẻ dưới ban đầu */
+  border-bottom: 1px solid var(--accent-color);
+  background: transparent;
+
+  /* THÊM TRANSITION cho hiệu ứng GLOW */
+  transition: border-bottom 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+
+
+.phone-container:focus-within {
+  /* Hiệu ứng Glow khi focus (nhập liệu) */
+  border-bottom: 2px solid var(--text-light);
+ /* Sáng trắng */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.country-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 8px 10px 0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  /* Căn chỉnh nội dung nút bấm */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+}
+
+/* Icon (trạng thái mặc định) */
+.flag-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+/* Cờ (trạng thái sau khi chọn) */
+.country-btn img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+/* SỬA QUAN TRỌNG: Màu chữ của input số điện thoại */
+#phone {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px 0;
+  /* Đặt lại màu trắng, để chữ nổi bật trên nền tím đậm */
+  color: var(--text-light); /* hoặc color: white; */
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* =================== DROPDOWN =================== */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 280px;
+  max-height: 250px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+  color: var(--text-dark);
+}
+
+.dropdown.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+/* THÊM: Định nghĩa kích thước cờ trong dropdown */
+.country-item img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.country-item:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+        
+        margin-top: 0px;
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
     }
 
-    .contact-page-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      padding: 60px 80px;
-      gap: 50px;
+    .footer-container {
+        display: flex; /* Sử dụng Flexbox để chia cột */
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+        max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
     }
 
-    .left-section {
-      width: 35%;
-      background-color: #25173A;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 50px;
-      border-radius: 20px;
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
     }
 
-    .contact-title {
-      font-size: 60px;
-      line-height: 1.1;
-      margin-bottom: 30px;
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
     }
 
-    .arrow-icon-container-contact {
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 15px;
-      color: #25173A;
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    .contact-icon-arrow {
-      font-size: 24px;
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: -90px;
+        /* Giả sử màu logo là màu xanh/cyan */
     }
 
-    .right-section {
-      width: 60%;
-      background-color: #fff;
-      padding: 50px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+
+    .company-description {
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+        margin-left: -87px; /* Giới hạn chiều rộng mô tả */
     }
 
-    /* =================== FORM =================== */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 20px;
-    }
-
-    .half-width {
-      flex: 1;
-    }
-
-    .full-width {
-      width: 100%;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #25173A;
-      box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .submit-button {
-      background-color: #25173A;
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .submit-button:hover {
-      background-color: #3a2762;
-    }
-
-    /* =================== Ô CHỌN QUỐC GIA =================== */
-    .phone-container {
-      position: relative;
-      width: 100%;
-    }
-
-    .input-group {
-      display: flex;
-      align-items: center;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
-      transition: 0.2s;
-    }
-
-    .input-group:focus-within {
-      border-color: #25173A;
-      box-shadow: 0 0 0 2px rgba(37, 23, 58, 0.1);
-    }
-
-    .country-btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: #f4f4f4;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-right: 1px solid #ccc;
-      font-weight: 600;
-    }
-
-    .country-btn img {
-      width: 20px;
-      height: 14px;
-      border-radius: 2px;
-    }
-
-    .toggle-icon {
-      font-size: 10px;
-      margin-left: 4px;
-    }
-
-    #phone {
-      border: none;
-      flex: 1;
-      padding: 12px;
-      font-size: 14px;
-    }
-
-    /* =================== DROPDOWN =================== */
-    .dropdown {
-      position: absolute;
-      top: 110%;
-      left: 0;
-      width: 280px;
-      max-height: 250px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      overflow-y: auto;
-      z-index: 10;
-      display: none;
-      animation: fadeIn 0.2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .country-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .country-item img {
-      width: 20px;
-      height: 14px;
-      border-radius: 2px;
-    }
-
-    .country-item:hover {
-      background-color: #f2f2f2;
-    }
-
-    /* =================== RESPONSIVE =================== */
-    @media (max-width: 900px) {
-      .contact-page-container {
+    /* Cột Liên hệ và Links */
+    .contact-column {
+        flex-basis: 60%; /* Cột bên phải rộng hơn một chút */
+        display: flex;
         flex-direction: column;
-        padding: 40px;
-      }
+        align-items: flex-end;
+        margin-left: -87px; /* Căn lề phải toàn bộ nội dung trong cột */
+        
 
-      .left-section, .right-section {
-        width: 100%;
-      }
+        
     }
+
+
+
+
+    
+
+    .footer-links {
+        justify-content: flex-start !important; 
+        
+        margin-right: 100px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+        justify-content: flex-start !important; 
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    /* Biểu tượng mạng xã hội */
+    .social-icons {
+        margin-top: 10px;
+        justify-content: flex-start !important; 
+        margin-right: 265px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+        /* Icon X, LinkedIn, Facebook. Cần thay thế bằng Font Awesome hoặc SVG */
+    }
+
+
+
+
+    /* Bản quyền */
+    .copyright {
+        margin-left: -10px;
+        margin-top: 30px;
+        text-align: right; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+/* =================== RESPONSIVE =================== */
+
   </style>
 </head>
 <body>
 
   <div class="contact-page-container">
-    
+   
     <div class="left-section">
       <h2 class="contact-title">
         Get In<br>Touch
@@ -240,7 +466,7 @@
 
     <div class="right-section">
       <form class="contact-form">
-        
+       
         <div class="form-row">
           <div class="form-group half-width">
             <label for="firstName">First name *</label>
@@ -260,13 +486,27 @@
         <label for="phone">Phone</label>
         <div class="phone-container">
           <div class="input-group">
+           
             <button class="country-btn" id="toggleBtn" type="button">
-              <img id="flagImg" src="https://flagcdn.com/w20/vn.png" alt="">
-              <span id="dialCode">+84</span>
+             
+              <!-- Icon mặc định: Bắt buộc phải thêm span để hiển thị mã vùng (+84) -->
+              <span class="default-icon-state">
+                <i class="fas fa-globe-americas flag-icon"></i>
+                <span id="dialCodePlaceholder"></span>
+              </span>
+             
+              <!-- Cờ sau khi chọn: Bắt buộc phải có span cho mã vùng -->
+              <span class="selected-flag-state hidden">
+                <img id="flagImg" src="https://flagcdn.com/w20/vn.png" alt="Vietnam Flag">
+                <span id="dialCode" style="margin-right: 5px;">+84</span>
+              </span>
+             
               <span class="toggle-icon">▼</span>
             </button>
+           
             <input id="phone" type="tel" placeholder="Nhập số điện thoại...">
           </div>
+         
           <div class="dropdown" id="dropdown">Đang tải dữ liệu...</div>
         </div>
 
@@ -282,29 +522,86 @@
       </form>
     </div>
 
-  </div>
 
-  <script>
+
+
+    
+    
+    </div> <!-- ✅ đóng .right-section -->
+  </div> <!-- ✅ đóng .contact-page-container -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column info-column">
+        <div class="logo1">
+          <img src="img/logo.png" alt="Ruth Holding Logo">
+        </div>
+        <p class="company-description">
+          Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage;
+          cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
+        </p>
+      </div>
+
+      <div class="footer-column contact-column">
+        <div class="footer-links">
+          <a href="./Accessibillity-Statement.html">Accessibility Statement</a>
+          <a href="./Privacy-Policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="contact-info">
+          <p class="phone">123-456-7890</p>
+          <p class="email">info@ruthholding.com</p>
+          <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
+        </div>
+        
+        <div class="social-icons">
+          <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
+          <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
+          <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; 2025 by Ruth Holding.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+   
+    <!-- JS ĐÃ GỘP VÀ TỐI ƯU -->
+      <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // --- KHAI BÁO BIẾN GỐC ---
     const dropdown = document.getElementById("dropdown");
     const toggleBtn = document.getElementById("toggleBtn");
     const flagImg = document.getElementById("flagImg");
+    const defaultIconState = document.querySelector('.default-icon-state');
+    const selectedFlagState = document.querySelector('.selected-flag-state');
+    const dialCodePlaceholder = document.getElementById("dialCodePlaceholder");
     const dialCode = document.getElementById("dialCode");
+    const toggleIcon = toggleBtn.querySelector(".toggle-icon");
     let isOpen = false;
 
-    toggleBtn.addEventListener("click", () => {
-      isOpen = !isOpen;
-      dropdown.style.display = isOpen ? "block" : "none";
-      toggleBtn.querySelector(".toggle-icon").textContent = isOpen ? "▲" : "▼";
-    });
+    // --- ẨN/HIỆN DROPDOWN ---
+    function toggleDropdown(show) {
+      isOpen = show;
+      dropdown.classList.toggle('active', isOpen);
+      toggleIcon.textContent = isOpen ? "▲" : "▼";
+    }
 
+    toggleBtn.addEventListener("click", () => toggleDropdown(!isOpen));
     document.addEventListener("click", (e) => {
-      if (!e.target.closest(".phone-container")) {
-        dropdown.style.display = "none";
-        toggleBtn.querySelector(".toggle-icon").textContent = "▼";
-        isOpen = false;
-      }
+      if (!e.target.closest(".phone-container")) toggleDropdown(false);
     });
 
+    // --- LOAD QUỐC GIA ---
     async function loadCountries() {
       try {
         const res = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,idd,cca2");
@@ -323,7 +620,7 @@
         renderDropdown(countries);
       } catch (err) {
         console.error("API lỗi:", err);
-        dropdown.innerHTML = "<p style='padding:10px;color:#ffcccc;'>Không tải được dữ liệu quốc gia!</p>";
+        dropdown.innerHTML = "<p style='padding:10px;color:var(--text-dark);'>Không tải được dữ liệu quốc gia!</p>";
       }
     }
 
@@ -333,21 +630,77 @@
         const item = document.createElement("div");
         item.className = "country-item";
         item.innerHTML = `
-          <img src="${country.flag}" alt="">
-          <span>${country.name} (${country.phone})</span>
+          <img src="${country.flag}" alt="${country.name} flag">
+          <span>${country.name} <span style="font-weight: 600;">(${country.phone})</span></span>
         `;
         item.addEventListener("click", () => {
           flagImg.src = country.flag;
           dialCode.textContent = country.phone;
-          dropdown.style.display = "none";
-          toggleBtn.querySelector(".toggle-icon").textContent = "▼";
-          isOpen = false;
+          dialCodePlaceholder.textContent = country.phone;
+          defaultIconState.classList.add('hidden');
+          selectedFlagState.classList.remove('hidden');
+          toggleDropdown(false);
         });
         dropdown.appendChild(item);
       });
     }
 
     loadCountries();
+
+    // ============================================================
+    // 🧩 THÊM PHẦN GỬI FORM LÊN GOOGLE SHEET
+    // ============================================================
+    const form = document.querySelector(".contact-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const countryCode = dialCode.textContent.trim() || "+84"; // nếu chưa chọn quốc gia, mặc định +84
+
+      // 🧠 URL API của bạn (đổi thành link Apps Script thực tế)
+      const apiURL = "https://script.google.com/macros/s/AKfycbyy8np_I6NT0sOOITAH5HshwhbD_1dYXs3dKbXpo2zLfpt57v14pxoO7V4kFD-Dti5i/exec";
+
+      const data = {
+        firstName,
+        lastName,
+        email,
+        countryCode,
+        
+        phone,
+        message
+      };
+
+      try {
+        const res = await fetch(apiURL, {
+          method: "POST",
+          mode: "no-cors", // tránh lỗi CORS
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: new URLSearchParams(data)
+        });
+
+        alert("✅ Gửi dữ liệu thành công!");
+        form.reset();
+
+        // Reset lại về mặc định cờ Việt Nam
+        dialCode.textContent = "";
+        dialCodePlaceholder.textContent = "";
+        selectedFlagState.classList.add('hidden');
+        defaultIconState.classList.remove('hidden');
+      } catch (err) {
+        console.error("Lỗi gửi dữ liệu:", err);
+        alert("❌ Lỗi khi gửi dữ liệu!");
+      }
+    });
+  });
   </script>
+
+  </div>
 </body>
 </html>
+

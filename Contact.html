@@ -125,100 +125,248 @@
                 loading="lazy">
             </iframe>
         </div>
+
+
+
+
+
+
+
     <div>
-        <section>
-    <div class="contact-page-container">
-        
+        <div class="contact-page-container">
+   
         <div class="left-section">
-            <h2 class="contact-title">
-                Get In<br>Touch
-            </h2>
-            <div class="arrow-icon-container-contact">
-                <i class="fas fa-arrow-right contact-icon-arrow"></i>
-            </div>
+        <h2 class="contact-title">
+            Get In<br>Touch
+        </h2>
+        <div class="arrow-icon-container-contact">
+            <i class="fas fa-arrow-right contact-icon-arrow"></i>
+        </div>
         </div>
 
         <div class="right-section">
-            <form class="contact-form">
+        <form class="contact-form">
+        
+            <div class="form-row">
+            <div class="form-group half-width">
+                <label for="firstName">First name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group half-width">
+                <label for="lastName">Last name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            </div>
+
+            <div class="form-group full-width">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            </div>
+
+            <label for="phone">Phone</label>
+            <div class="phone-container">
+            <div class="input-group">
+            
+                <button class="country-btn" id="toggleBtn" type="button">
                 
-                <div class="form-row">
-                    <div class="form-group half-width">
-                        <label for="firstName">First name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group half-width">
-                        <label for="lastName">Last name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
+                <!-- Icon mặc định: Bắt buộc phải thêm span để hiển thị mã vùng (+84) -->
+                <span class="default-icon-state">
+                    <i class="fas fa-globe-americas flag-icon"></i>
+                    <span id="dialCodePlaceholder"></span>
+                </span>
+                
+                <!-- Cờ sau khi chọn: Bắt buộc phải có span cho mã vùng -->
+                <span class="selected-flag-state hidden">
+                    <img id="flagImg" src="https://flagcdn.com/w20/vn.png" alt="Vietnam Flag">
+                    <span id="dialCode" style="margin-right: 5px;">+84</span>
+                </span>
+                
+                <span class="toggle-icon">▼</span>
+                </button>
+            
+                <input id="phone" type="tel" placeholder="Nhập số điện thoại...">
+            </div>
+            
+            <div class="dropdown" id="dropdown">Đang tải dữ liệu...</div>
+            </div>
 
-                <div class="form-group full-width">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+            <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+            </div>
 
-                <div class="form-group full-width">
-                    <label for="phone">Phone</label>
-                    <div class="phone-input-wrapper">
-                        <i class="fas fa-globe-americas flag-icon"></i> 
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                </div>
+            <div class="form-group full-width submit-group">
+            <button type="submit" class="submit-button">Submit</button>
+            </div>
 
-                <div class="form-group full-width">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="1"></textarea>
-                </div>
+        </form>
+        </div>
+    
+        </div> <!-- ✅ đóng .right-section -->
+  </div> <!-- ✅ đóng .contact-page-container -->
 
-                <div class="form-group full-width submit-group">
-                    <button type="submit" class="submit-button">Submit</button>
-                </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column info-column">
+        <div class="logo1">
+          <img src="img/logo.png" alt="Ruth Holding Logo">
+        </div>
+        <p class="company-description">
+          Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage;
+          cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
+        </p>
+      </div>
 
-            </form>
+      <div class="footer-column contact-column">
+        <div class="footer-links">
+          <a href="./Accessibillity-Statement.html">Accessibility Statement</a>
+          <a href="./Privacy-Policy.html">Privacy Policy</a>
         </div>
 
+        <div class="contact-info">
+          <p class="phone">123-456-7890</p>
+          <p class="email">info@ruthholding.com</p>
+          <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
+        </div>
+        
+        <div class="social-icons">
+          <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
+          <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
+          <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
+        </div>
+      </div>
     </div>
-    </section>
+
+    <div class="copyright">
+      &copy; 2025 by Ruth Holding.
     </div>
-        <footer class="footer">
-                <div class="footer-container">
-                    <div class="footer-column info-column">
-                        <div class="logo1">
-                            <img src="img/logo.png" alt="Ruth Holding Logo"> 
-                            
-                        </div>
-                        <p class="company-description">
-                            Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage; cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
-                        </p>
-                    </div>
-
-                    <div class="footer-column contact-column">
-                        <div class="footer-links">
-                            <a href="./Accessibillity-Statement.html">Accessibility Statement</a>
-                            <a href="./Privacy-Policy.html">Privacy Policy</a>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="phone">123-456-7890</p>
-                            <p class="email">info@ruthholding.com</p>
-                            <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
-                        </div>
-                        
-                        <div class="social-icons">
-                            <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
-                            <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
-                            <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="copyright">
-                    &copy; 2025 by Ruth Holding.
-            </div>
-    
-
+  </footer>
  
     </main>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // --- KHAI BÁO BIẾN GỐC ---
+    const dropdown = document.getElementById("dropdown");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const flagImg = document.getElementById("flagImg");
+    const defaultIconState = document.querySelector('.default-icon-state');
+    const selectedFlagState = document.querySelector('.selected-flag-state');
+    const dialCodePlaceholder = document.getElementById("dialCodePlaceholder");
+    const dialCode = document.getElementById("dialCode");
+    const toggleIcon = toggleBtn.querySelector(".toggle-icon");
+    let isOpen = false;
+
+    // --- ẨN/HIỆN DROPDOWN ---
+    function toggleDropdown(show) {
+      isOpen = show;
+      dropdown.classList.toggle('active', isOpen);
+      toggleIcon.textContent = isOpen ? "▲" : "▼";
+    }
+
+    toggleBtn.addEventListener("click", () => toggleDropdown(!isOpen));
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".phone-container")) toggleDropdown(false);
+    });
+
+    // --- LOAD QUỐC GIA ---
+    async function loadCountries() {
+      try {
+        const res = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,idd,cca2");
+        const data = await res.json();
+
+        const countries = data
+          .filter(c => c.idd?.root)
+          .map(c => ({
+            name: c.name.common,
+            code: c.cca2.toLowerCase(),
+            flag: c.flags.svg || c.flags.png,
+            phone: c.idd.root + (c.idd.suffixes ? c.idd.suffixes[0] : "")
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+
+        renderDropdown(countries);
+      } catch (err) {
+        console.error("API lỗi:", err);
+        dropdown.innerHTML = "<p style='padding:10px;color:var(--text-dark);'>Không tải được dữ liệu quốc gia!</p>";
+      }
+    }
+
+    function renderDropdown(countries) {
+      dropdown.innerHTML = "";
+      countries.forEach(country => {
+        const item = document.createElement("div");
+        item.className = "country-item";
+        item.innerHTML = `
+          <img src="${country.flag}" alt="${country.name} flag">
+          <span>${country.name} <span style="font-weight: 600;">(${country.phone})</span></span>
+        `;
+        item.addEventListener("click", () => {
+          flagImg.src = country.flag;
+          dialCode.textContent = country.phone;
+          dialCodePlaceholder.textContent = country.phone;
+          defaultIconState.classList.add('hidden');
+          selectedFlagState.classList.remove('hidden');
+          toggleDropdown(false);
+        });
+        dropdown.appendChild(item);
+      });
+    }
+
+    loadCountries();
+
+    // ============================================================
+    // 🧩 THÊM PHẦN GỬI FORM LÊN GOOGLE SHEET
+    // ============================================================
+    const form = document.querySelector(".contact-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const countryCode = dialCode.textContent.trim() || "+84"; // nếu chưa chọn quốc gia, mặc định +84
+
+      // 🧠 URL API của bạn (đổi thành link Apps Script thực tế)
+      const apiURL = "https://script.google.com/macros/s/AKfycbyy8np_I6NT0sOOITAH5HshwhbD_1dYXs3dKbXpo2zLfpt57v14pxoO7V4kFD-Dti5i/exec";
+
+      const data = {
+        firstName,
+        lastName,
+        email,
+        countryCode,
+        
+        phone,
+        message
+      };
+
+      try {
+        const res = await fetch(apiURL, {
+          method: "POST",
+          mode: "no-cors", // tránh lỗi CORS
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: new URLSearchParams(data)
+        });
+
+        alert("✅ Gửi dữ liệu thành công!");
+        form.reset();
+
+        // Reset lại về mặc định cờ Việt Nam
+        dialCode.textContent = "";
+        dialCodePlaceholder.textContent = "";
+        selectedFlagState.classList.add('hidden');
+        defaultIconState.classList.remove('hidden');
+      } catch (err) {
+        console.error("Lỗi gửi dữ liệu:", err);
+        alert("❌ Lỗi khi gửi dữ liệu!");
+      }
+    });
+  });
+  </script>
 
     <script src="script/Contact.js"></script>
 

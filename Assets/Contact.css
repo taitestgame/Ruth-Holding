@@ -412,125 +412,300 @@ body {
 
 
 
+/* phan ìno */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+    
+  color: #333;
+  /* Sử dụng Custom Properties để dễ dàng quản lý màu */
+  --primary-color: #25173A; /* Tím đậm */
+  --accent-color: #3A4BFF; /* Xanh dương */
+  --text-light: white;
+  --text-dark: #333;
+}
+
+.contact-page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px 0px;
+  gap: 10px;
+  
+}
+
+.left-section {
+  width: 35%;
+  background-color: #9fc9ec;
+  color: #25173A;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Nội dung sẽ dồn lên phía trên */
+  padding: 50px;
+  border-radius: 5px;
+  border-right: 5px solid var(--text-light);
+  
+}
+
+.contact-title {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.arrow-icon-container-contact {
+  /* background-color: var(--primary-color);  <-- BỎ DÒNG NÀY ĐI HOẶC ĐẶT LÀ transparent */
+  background-color: transparent; /* Thay vì nền tím, làm nền trong suốt */
+  border: 2px solid #25173A;; /* THÊM VIỀN: viền màu trắng để nổi bật trên nền tím */
+  border-radius: 50%;
+  padding: 15px; /* Giữ nguyên padding */
+  display: flex; /* Thêm để căn giữa mũi tên */
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* Điều chỉnh kích thước nếu cần */
+  height: 30px; /* Điều chỉnh kích thước nếu cần */
+  box-sizing: content-box; /* Đảm bảo padding không ảnh hưởng đến width/height tổng thể */
+}
+
+.contact-icon-arrow {
+  font-size: 24px;
+  color: #25173A;; /* Màu mũi tên vẫn là trắng */
+  /* margin-left: -2px; */ /* Tùy chỉnh nhỏ để mũi tên cân đối hơn */
+}
 
 
 
-
-
-
-
-
-
-
-/* --- Cột Phải: Form Liên Hệ (Nền Tím Đậm) --- */
 .right-section {
-    flex: 1; /* Chiếm phần còn lại (60%) */
-    background-color: var(--primary-dark);
-    padding: 100px 5%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  width: 60%;
+  background-color: var(--primary-color);
+  padding: 50px;
+  border-radius: 5px; /* Thống nhất bo tròn */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  /* Mặc định màu chữ của section này là trắng */
+  color: var(--text-light);
 }
 
+/* =================== FORM ELEMENTS =================== */
 .contact-form {
-    width: 100%;
-    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* --- Phong cách Form --- */
 .form-row {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.form-group {
-    margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
 }
 
 .half-width {
-    flex: 1; /* Chia đều 50% cho First Name và Last Name */
-}
-
-.full-width {
-    width: 100%;
+  flex: 1;
 }
 
 label {
-    display: block;
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--text-light);
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="tel"],
+input, textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--text-light); /* Màu chữ trắng cho input thường (First Name, Email) */
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid var(--text-light);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Placeholder màu nhạt */
+}
+
 textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--input-line);
-    color: var(--text-light);
-    font-size: 1.1rem;
-    padding: 10px 0;
-    box-sizing: border-box;
-    outline: none;
-    /* Loại bỏ đường viền focus mặc định */
-}
-
-textarea {
-    resize: none; /* Ngăn người dùng thay đổi kích thước */
-    overflow: hidden; /* Ẩn thanh cuộn */
-}
-
-/* Phone Input Customization */
-.phone-input-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--input-line);
-}
-
-.flag-icon {
-    color: var(--input-line);
-    margin-right: 10px;
-    font-size: 1.1rem;
-    /* Dùng placeholder icon, bạn cần dùng thư viện cờ thực tế để chính xác hơn */
-}
-
-.phone-input-wrapper input {
-    border-bottom: none; /* Bỏ border dưới cho input bên trong wrapper */
-    padding-left: 0;
-}
-
-/* --- Nút Submit --- */
-.submit-group {
-    margin-top: 50px;
+  resize: vertical;
 }
 
 .submit-button {
-    background-color: var(--text-light);
-    color: var(--primary-dark);
-    font-size: 1.1rem;
-    font-weight: 700;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  /* Thuộc tính cơ bản từ .btn-contact */
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #f5f4f4; /* Màu xám nhạt */
+  color: #000000; /* Màu chữ đen */
+  border: none;
+  text-decoration: none;
+  border-radius: 25px; /* Bo tròn mạnh */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+ 
+  /* Căn chỉnh trong Form */
+  margin-top: 20px;
+  align-self: flex-start; /* Giữ nút ở bên trái */
+ 
+  /* HIỆU ỨNG ANIMATION SLIDE UP (theo yêu cầu) */
+  opacity: 0; /* Ban đầu ẩn đi */
+  transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
+  animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
+  animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
 }
 
 .submit-button:hover {
-    background-color: #e0e0e0;
+  /* Hiệu ứng hover từ .btn-contact */
+  background-color: #2c253b; /* Màu nền tím đậm khi hover */
+  color: #ffffff; /* Màu chữ trắng */
+  border: 1px solid #ffffff; /* Thêm viền trắng */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Đổ bóng */
+  transform: translateY(0); /* Đảm bảo nút không bị dịch chuyển */
+}
+
+/* Định nghĩa hiệu ứng animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================== PHONE INPUT & DROPDOWN =================== */
+
+.hidden {
+  display: none !important;
+}
+
+.phone-container {
+  position: relative;
+  width: 100%;
+  border: none;
+  /* Đường kẻ dưới ban đầu */
+  border-bottom: 1px solid var(--accent-color);
+  background: transparent;
+
+  /* THÊM TRANSITION cho hiệu ứng GLOW */
+  transition: border-bottom 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+
+
+.phone-container:focus-within {
+  /* Hiệu ứng Glow khi focus (nhập liệu) */
+  border-bottom: 2px solid var(--text-light);
+ /* Sáng trắng */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.country-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 8px 10px 0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  /* Căn chỉnh nội dung nút bấm */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+}
+
+/* Icon (trạng thái mặc định) */
+.flag-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+/* Cờ (trạng thái sau khi chọn) */
+.country-btn img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+/* SỬA QUAN TRỌNG: Màu chữ của input số điện thoại */
+#phone {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px 0;
+  /* Đặt lại màu trắng, để chữ nổi bật trên nền tím đậm */
+  color: var(--text-light); /* hoặc color: white; */
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* =================== DROPDOWN =================== */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 280px;
+  max-height: 250px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+  color: var(--text-dark);
+}
+
+.dropdown.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+/* THÊM: Định nghĩa kích thước cờ trong dropdown */
+.country-item img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.country-item:hover {
+  background-color: #f2f2f2;
 }
 
 
 
 
-.footer {
+ .footer {
         
-        margin-top: 0px;
+        margin-top: -22px;
         background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
         color: #FFFFFF; /* Màu chữ trắng */
         padding: 40px 0; /* Khoảng cách trên dưới */
@@ -589,11 +764,6 @@ textarea {
 
         
     }
-
-
-
-
-    
 
     .footer-links {
         justify-content: flex-start !important; 
@@ -664,6 +834,16 @@ textarea {
         font-weight: 700;
 
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
