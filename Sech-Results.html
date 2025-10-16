@@ -26,7 +26,7 @@
                     <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-               <a  id="search-btn"><span>Search</span></a>
+               <a id="search-btn"><span>Search</span></a>
             </div>
         </nav>
 
@@ -48,123 +48,124 @@
         </div>
     </header>
 
-    <main style="height:2000px; background:#ffffff;">
-        <!-- <p style="padding:200px;">Kéo trang để xem hiệu ứng header...</p> -->
+    
          <div class="continiu-sec">
-        <div>
-            <h1>Search Results</h1>
+            <div>
+                <h1>Search Results</h1>
+            </div>
+
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            <div><p>6 results found with an empty search</p></div>
+
+            <div><h2><a href="./Privacy-Policy.html">Privacy Policy | Ruth Holding</a></h2></div>
+            <div><p>Privacy Policy A legal disclaimer The explanations and information provided on this
+            page are only general and high-level explanations and information on how to write your own document of a Privacy Policy.
+            You should not rely on this article as legal advice or as recommendations regarding what you should actually do,
+            because we cannot know in advance what are the specific privacy policies you</p></div>
+
+            <div><h2><a href="./Products.html">Products | Ruth Holding</a></h2></div>
+            <div><p>Power Up with Ruth Holding Ruth Holding is the leading manufacturer of electrical
+            panels with medium and low voltage; cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. 
+            Our team is dedicated to providing top-quality products that meet safety standards and offer innovative solutions for various
+            electrical needs.
+            Customized Electrical Solutions We specialize in providing</p></div>
+
+            <div><h2><a href="./Privacy-Policy.html">About Us | Ruth Holding</a></h2></div>
+            <div><p>Empowering Electric Solutions Committed to Excellence. Our Commitment Ruth Holding is the
+            leading manufacturer of electrical panels with medium and low voltage; cable support systems; 19” 
+            rack & enclosures solutions and sheet metal fabrication. We prioritize the preservation and enhancement
+            of historical architecture by providing 
+            innovative electrical solutions that seamlessly integrate with vintage</p></div>
+
+            <div><h2><a href="./Contact.html">Contact | Ruth Holding</a></h2></div>
+            <div><p>Ruth Holding Ruth Holding is the leading manufacturer of electrical panels with medium and low
+            voltage; cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. We view our
+            customers as our partners who contribute to our success. Hence, we always try harder to bring more benefits 
+            to our customers. Location 123 Main Street, Anytown,
+            USA 6 Lorne Street, Auckland Central,</p></div>
+
+            <div><h2><a href="./Privacy-Policy.html">Accessibility Statement | Ruth Holding</a></h2></div>
+            <div><p>Ruth Holding is committed to ensuring that our website is accessible to people with disabilities. We strive to make
+            our site user-friendly and inclusive for everyone, including those with visual, hearing, motor, and cognitive impairments.
+            If you encounter any accessibility barriers on our website or have any suggestions for improvement,
+            please do not hesitate to contact us. We value your input and are here</p></div>
+
+            <div><h2><a href="./Home.html">Home | Ruth Holding</a></h2></div>
+            <div><p>Welcome to Ruth Holding Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage; 
+            cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. We view our customers as our partners 
+            who contribute to our success. Hence, we always try harder to bring more benefits to our customers. 
+            Contact Us Our Specializations Customized Solutions</p></div>
+        </div> 
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column info-column">
+                    <div class="logo1">
+                        <img src="img/logo.png" alt="Ruth Holding Logo">
+                    </div>
+                    <p class="company-description">
+                        Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage;
+                        cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
+                    </p>
+                </div>
+
+                <div class="footer-column contact-column">
+                    <div class="footer-links">
+                        <a href="./Accessibillity-Statement.html">Accessibility Statement</a>
+                        <a href="./Privacy-Policy.html">Privacy Policy</a>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="phone">123-456-7890</p>
+                        <p class="email">info@ruthholding.com</p>
+                        <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
+                        <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
+                        <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 by Ruth Holding.
+            </div>
+        </footer>
+
+        <!-- POPUP TÌM KIẾM -->
+        <div class="search-popup" id="search-popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <input type="text" id="search-input" placeholder="Search" />
+                    <button id="close-btn">Close</button>
+                </div>
+
+                <div class="popup-results">
+                    <div class="result-item">
+                        <h4><a href="./Privacy-Policy.html">Privacy Policy | Ruth Holding</a></h4>
+                        <p>Privacy Policy A legal disclaimer The explanations and information...</p>
+                    </div>
+                    <div class="result-item">
+                        <h4><a href="./Products.html">Products | Ruth Holding</a></h4>
+                        <p>Power Up with Ruth Holding Ruth Holding is the leading manufacturer...</p>
+                    </div>
+                    <div class="result-item">
+                        <h4><a href="./About-Us.html">About Us | Ruth Holding</a></h4>
+                        <p>Empowering Electric Solutions Committed to Excellence...</p>
+                    </div>
+                </div>
+
+                <button type="button" class="show-results">Show All Results</button>
+            </div>
         </div>
-        <div class="search-box">
-  <i class="fa fa-search"></i>
-  <input type="text" placeholder="Search..." />
-</div>
 
-
-
-
-<div><p>6 results found with an empty search</p></div>
-<div><h2><a href="./Privacy-Policy.html">Privacy Policy | Ruth Holding</a></h2></div>
-<div><p>Privacy Policy A legal disclaimer The explanations and information provided on this
-     page are only general and high-level explanations and information on how to write your own document of a Privacy Policy.
-      You should not rely on this article as legal advice or as recommendations regarding what you should actually do,
-     because we cannot know in advance what are the specific privacy policies you</p></div>
-     <div><h2><a href="./Products.html">Products | Ruth Holding</a></h2></div>
-<div><p>Power Up with Ruth Holding Ruth Holding is the leading manufacturer of electrical
-     panels with medium and low voltage; cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. 
-     Our team is dedicated to providing top-quality products that meet safety standards and offer innovative solutions for various
-      electrical needs.
-     Customized Electrical Solutions We specialize in providing</p></div>
-     <div><h2><a href="./Privacy-Policy.html">About Us | Ruth Holding</a></h2></div>
-<div><p>Empowering Electric Solutions Committed to Excellence. Our Commitment Ruth Holding is the
-     leading manufacturer of electrical panels with medium and low voltage; cable support systems; 19” 
-     rack & enclosures solutions and sheet metal fabrication. We prioritize the preservation and enhancement
-      of historical architecture by providing 
-    innovative electrical solutions that seamlessly integrate with vintage</p></div>
-     <div><h2><a href="./Contact.html">Contact | Ruth Holding</a></h2></div>
-<div><p>Ruth Holding Ruth Holding is the leading manufacturer of electrical panels with medium and low
-     voltage; cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. We view our
-      customers as our partners who contribute to our success. Hence, we always try harder to bring more benefits 
-      to our customers. Location 123 Main Street, Anytown,
-     USA 6 Lorne Street, Auckland Central,</p></div>
-     <div><h2><a href="./Privacy-Policy.html">Accessibility Statement | Ruth Holding</a></h2></div>
-<div><p>Ruth Holding is committed to ensuring that our website is accessible to people with disabilities. We strive to make
-     our site user-friendly and inclusive for everyone, including those with visual, hearing, motor, and cognitive impairments.
-      If you encounter any accessibility barriers on our website or have any suggestions for improvement,
-     please do not hesitate to contact us. We value your input and are here</p></div><div><h2><a href="./Home.html">Home | Ruth Holding</a></h2></div>
-<div><p>Welcome to Ruth Holding Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage; 
-    cable support systems; 19” rack & enclosures solutions and sheet metal fabrication. We view our customers as our partners 
-    who contribute to our success. Hence, we always try harder to bring more benefits to our customers. 
-    Contact Us Our Specializations Customized Solutions</p></div>
-</div>
-
-
- <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column info-column">
-        <div class="logo1">
-          <img src="img/logo.png" alt="Ruth Holding Logo">
-        </div>
-        <p class="company-description">
-          Ruth Holding is the leading manufacturer of electrical panels with medium and low voltage;
-          cable support systems; 19" rack & enclosures solutions and sheet metal fabrication
-        </p>
-      </div>
-
-      <div class="footer-column contact-column">
-        <div class="footer-links">
-          <a href="./Accessibillity-Statement.html">Accessibility Statement</a>
-          <a href="./Privacy-Policy.html">Privacy Policy</a>
-        </div>
-
-        <div class="contact-info">
-          <p class="phone">123-456-7890</p>
-          <p class="email">info@ruthholding.com</p>
-          <p class="address">6 Lorne Street, Auckland Central, Auckland 1010</p>
-        </div>
-        
-        <div class="social-icons">
-          <a href="#" class="social-icon icon-x" aria-label="X/Twitter"><span>&#x2716;</span></a>
-          <a href="#" class="social-icon icon-linkedin" aria-label="LinkedIn"><span>in</span></a>
-          <a href="#" class="social-icon icon-facebook" aria-label="Facebook"><span>f</span></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright">
-      &copy; 2025 by Ruth Holding.
-    </div>
-   <!-- POPUP TÌM KIẾM -->
-<div class="search-popup" id="search-popup">
-  <div class="popup-content">
-    <div class="popup-header">
-      <input type="text" id="search-input" placeholder="Search" />
-      <button id="close-btn">Close</button>
-    </div>
-
-    <div class="popup-results">
-      <div class="result-item">
-        <h4 ><a href="./Privacy-Policy.html">Privacy Policy | Ruth Holding</a></h4>
-        <p>Privacy Policy A legal disclaimer The explanations and information...</p>
-      </div>
-      <div class="result-item">
-        <h4><a href="./Products.html">Products | Ruth Holding</a></h4>
-        <p>Power Up with Ruth Holding Ruth Holding is the leading manufacturer...</p>
-      </div>
-      <div class="result-item">
-        <h4><a href="./About-Us.html">About Us | Ruth Holding</a></h4>
-        <p>Empowering Electric Solutions Committed to Excellence...</p>
-      </div>
-    </div>
-
-   <button type="button" class="show-results">Show All Results</button>
-
-
-  </div>
-</div>
-
-    </main>
+    
 
     <script src="script/Sech-Results.js"></script>
-
 </body>
 </html>

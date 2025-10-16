@@ -207,6 +207,13 @@ body {
         gap: 90px;
     }
     .search { gap: 15px; }
+
+
+
+
+
+
+
    .search-box {
   display: flex;
   align-items: center;
@@ -256,10 +263,23 @@ body {
 .continiu-sec a{
     color: #000;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  .footer {
         
-        margin-left: -1050px;    
-            justify-content: flex-start !important; 
+        
         background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
         color: #FFFFFF; /* Màu chữ trắng */
         padding: 40px 0; /* Khoảng cách trên dưới */
@@ -370,7 +390,7 @@ body {
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
-        margin-left: 10px;
+        margin-left: 15px;
         font-weight: 700;
         /* Icon X, LinkedIn, Facebook. Cần thay thế bằng Font Awesome hoặc SVG */
     }
@@ -380,6 +400,7 @@ body {
 
     /* Bản quyền */
     .copyright {
+        margin-left: -10px;
         margin-top: 30px;
         text-align: right; /* Căn lề phải */
         max-width: 1100px;
@@ -387,6 +408,18 @@ body {
         font-weight: 700;
 
     }
+    
+
+
+
+
+
+
+
+
+
+
+
     /*popup*/
 
     .search-popup {
@@ -642,4 +675,223 @@ padding: 100px 0px 30px 0px;
     }
    
     .mobile-menu-icon { display: block; }
+
+   .search-box {
+    margin-top: 170px ;
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;       /* màu nền nhạt như ảnh */
+  border: 1px solid #8c8395;       /* viền xám tím */
+  padding: 10px 15px;
+  width: 80%;                      /* có thể chỉnh theo ý */
+  max-width: 900px;
+  margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.search-box i {
+  color: #4a4057;                  /* màu tím xám cho icon */
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+  color: #4a4057;
+  font-weight: 600;                /* chữ đậm nhẹ như ảnh */
+}
+
+.search-box input::placeholder {
+  color: #4a4057;
+  opacity: 0.7;
+}
+.continiu-sec{
+    padding: 0px 20px;
+    color: #000;
+}
+.continiu-sec h1{
+    padding: 0px 20px;
+    color: #000;
+   
+}
+.continiu-sec p{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5; 
+     font-weight: 600;  
+}
+.continiu-sec a{
+    color: #000;
+}
+.search-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.search-popup.active {
+  display: flex; /* hiện khi bấm nút */
+}
+
+.popup-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+}
+  .footer {
+    margin-top: 15px;
+        
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
+    }
+
+    .footer-container {
+
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
+    }
+
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
+    }
+
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
+    }
+
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: 80px;
+        /* Giả sử màu logo là màu xanh/cyan */
+    }
+
+    .section-divider {
+
+        /* Đảm bảo nó là một đường thẳng */
+        border: none;
+        height: 1px; /* Độ dày của đường viền */
+        
+        /* Màu tím đậm như trong hình */
+        background-color: #17113e; 
+        margin-top: 30px;
+        /* Thiết lập chiều rộng (Ví dụ: 80% chiều rộng của khối cha) */
+        width: 100%; 
+
+    }
+
+
+
+
+    .company-description {
+        margin-top: 30px;
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+
+    }
+
+    /* Cột Liên hệ và Links */
+    .contact-column {
+
+
+        flex-direction: column;
+
+        
+    }
+
+    .footer-links {      
+        margin-left: -20px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    .social-icons {
+        margin-top: 10px;
+ 
+        margin-left: -10px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+   
+    }
+
+
+
+
+    /* Bản quyền */
+    .copyright {
+        margin-left: 35px;
+        margin-top: 30px;
+        text-align: left; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+
 }

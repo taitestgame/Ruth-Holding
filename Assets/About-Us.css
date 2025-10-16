@@ -1221,6 +1221,7 @@ padding: 100px 0px 30px 0px;
 /* Mobile */
 @media (max-width: 767px) {
     .header {
+        
         flex-direction: column;
         padding: 10px 20px;
         height: auto;
@@ -1280,4 +1281,471 @@ padding: 100px 0px 30px 0px;
     }
    
     .mobile-menu-icon { display: block; }
+
+/* 1 */
+
+.two-column-layout {
+            margin-top: 170px;
+            
+            width: 100%;
+
+        }
+    .text-column {
+            flex: 1; /* Cho phép cột này chiếm 1 phần không gian */
+            background-color: #2c253b; /* Màu nền giống như trong hình (màu tím đậm) */
+            color: white; /* Màu chữ trắng */
+            padding: 20px 5%; /* Thêm padding (khoảng cách lề) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+        }
+    .main-title {
+            font-size: 40px; /* Kích thước chữ linh hoạt theo màn hình */
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 700; /* In đậm */
+
+        }
+        .main-title br {
+        display: none; /* Ẩn thẻ <br>, do đó nó không còn tạo ra ngắt dòng */
+    }
+    .description {
+            font-size: 15px; /* Kích thước chữ linh hoạt */
+            line-height: 1.6;
+            max-width: 550px; 
+            font-weight: 700;
+
+    }
+    
+    .image-column img {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+
+/* p2 */
+    .content_5 {
+        display: flex;
+        
+        /* Căn chỉnh theo chiều dọc: Mũi tên và chữ cùng hàng */
+        align-items: flex-start; /* Căn chỉnh đầu dòng (giữ H1 và nút ở trên) */
+        /* Quan trọng: Đẩy H1 và nút ra hai phía */
+        justify-content: space-between; 
+        margin-bottom: 30px;
+        padding: 30px; 
+        padding-left: 2px /* Khoảng cách giữa header và đoạn văn */
+    }
+
+    .content_5 h1 {
+
+        font-family: 'Montserrat', sans-serif;
+        /* Tăng kích thước H1 để chữ xuống dòng hợp lý */
+        font-size: 32px; 
+        line-height: 1.2;
+        font-weight: 600;
+        color: #1E1536;
+        margin-bottom: 30px;
+        text-align: left;
+        /* Cho phép H1 chiếm không gian cần thiết, không bị nút đẩy */
+        max-width: 100%;
+        padding-left:2px ;
+        
+    }
+
+    /* Ẩn thẻ <br> nếu có trong H1 */
+    .content_5 br{
+        display: none;
+    }
+
+    /* 2. Nút Mũi Tên */
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #999; /* Màu viền nhẹ nhàng hơn một chút */
+        border-radius: 50%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        font-size: 20px;
+        line-height: 1;
+        color: #1E1536;
+        margin-top: -6px;
+
+        flex-shrink: 0; 
+    }
+
+    /* 3. Đoạn Văn Bản (P) */
+    .content_6_p {
+        font-size: 16px; /* Tăng kích thước font để dễ đọc hơn */
+        color: #1E1536; /* Màu chữ gần màu đen hơn */
+        line-height: 1.6; /* Tăng line-height cho dễ đọc */
+        max-width: 90%; 
+        font-weight: normal; /* Font weight bình thường, không đậm */
+        margin-top: -60px;
+        padding-left: 2px ;
+        font-weight: 600; /* Đã có margin-bottom trên .content_5, không cần padding-top */
+    }
+
+/* 3 */
+
+
+.text-box3 {
+    display: flex;
+    flex-direction: column; /* Xếp dọc */
+    align-items: center;
+    gap: 60px; /* Khoảng cách giữa các mục */
+  }
+
+  .text-box3 > div {
+    width: 100%;
+    max-width: 320px; /* Giới hạn độ rộng */
+    text-align: center;
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .text-box3 svg {
+    width: 90px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .text-box3 h5 {
+    font-size: 1em;
+    margin-top: 8px;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .section-divider {
+    /* Các thuộc tính cũ */
+    border: none;
+    height: 1px;
+    background-color: #17113e; 
+    margin-top: 60px;
+    margin-right: auto; 
+    width: 93%; 
+
+    animation: slideInFromLeft 1.5s ease-out forwards; 
+}
+
+/* 4 */
+
+
+.solution-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+    margin: 40px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1536;
+  }
+
+  /* Bên trái (Our Presence + nút mũi tên) */
+  .left-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content_5 {
+    display: flex;
+    justify-content: space-between;
+    
+    
+  }
+
+  .content_5 h1 {
+    margin-left: 30px;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: 0;
+    color: #1E1536;
+  }
+
+  .arrow-btn {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid #1E1536;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .arrow-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #1E1536;
+  }
+
+  /* Bên phải (Manufacturing Excellence + nội dung) */
+  .right-column {
+    width: 100%;
+  }
+
+  .content_6 h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 25px 0;
+    margin-top: -20px;
+  }
+
+  .contact-item {
+    display: block; /* Xếp dọc thay vì ngang */
+    margin-bottom: 20px;
+  }
+
+  .contact-item .label {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1E1536;
+  }
+
+  .contact-item .value {
+    font-size: 1em;
+    font-weight: 500;
+    color: #1E1536;
+    line-height: 1.5;
+  }
+
+/* 5 */
+.vision img {
+    width: 100%;
+  height: 250px; /* chỉnh chiều cao hiển thị ảnh, ví dụ 300px */
+  object-fit: cover; /* cắt ảnh vừa khung mà không méo */
+  object-position: left ;
+   background-size: 0%;
+
+
+    }
+
+     .banner-content {
+        margin-top: 10px;
+        flex: 1.2;
+        background-color: #271E3C;
+        color: white;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 150px;
+        /* Vẫn giữ min-height để cột content kéo dãn cột ảnh */
+    }
+
+    .banner-content h1 {
+        font-size: 34px;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: left;}
+
+    .banner-content h1 br{
+       display: none; 
+    }
+    
+
+
+    .btn-contact {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #f5f4f4;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+
+    }
+
+/* 6 */
+.footer {
+    margin-top: 15px;
+        
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
+    }
+
+    .footer-container {
+
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
+    }
+
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
+    }
+
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
+    }
+
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: 80px;
+        /* Giả sử màu logo là màu xanh/cyan */
+    }
+
+    .section-divider {
+
+        /* Đảm bảo nó là một đường thẳng */
+        border: none;
+        height: 1px; /* Độ dày của đường viền */
+        
+        /* Màu tím đậm như trong hình */
+        background-color: #17113e; 
+        margin-top: 30px;
+        /* Thiết lập chiều rộng (Ví dụ: 80% chiều rộng của khối cha) */
+        width: 100%; 
+
+    }
+
+
+
+
+    .company-description {
+        margin-top: 30px;
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+
+    }
+
+    /* Cột Liên hệ và Links */
+    .contact-column {
+
+
+        flex-direction: column;
+
+        
+    }
+
+    .footer-links {      
+        margin-left: -20px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    .social-icons {
+        margin-top: 10px;
+ 
+        margin-left: -10px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+   
+    }
+
+
+
+
+    /* Bản quyền */
+    .copyright {
+        margin-left: 35px;
+        margin-top: 30px;
+        text-align: left; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+
+.search-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.search-popup.active {
+  display: flex; /* hiện khi bấm nút */
+}
+
+.popup-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+
+
+    
 }

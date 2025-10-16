@@ -535,9 +535,9 @@ textarea {
 }
 
 .submit-button {
-  /* Thuộc tính cơ bản từ .btn-contact */
+
   display: inline-block;
-  padding: 12px 25px;
+  padding: 13px 30px;
   background-color: #f5f4f4; /* Màu xám nhạt */
   color: #000000; /* Màu chữ đen */
   border: none;
@@ -546,28 +546,27 @@ textarea {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
- 
-  /* Căn chỉnh trong Form */
+
   margin-top: 20px;
-  align-self: flex-start; /* Giữ nút ở bên trái */
+  align-self: flex-start; 
  
-  /* HIỆU ỨNG ANIMATION SLIDE UP (theo yêu cầu) */
-  opacity: 0; /* Ban đầu ẩn đi */
-  transform: translateY(50px); /* Dịch chuyển xuống dưới 50px */
-  animation: slideUp 2s ease-out forwards; /* Hiệu ứng sổ lên */
-  animation-delay: 0.5s; /* Đợi 0.5 giây trước khi bắt đầu */
+
+  opacity: 0; 
+  transform: translateY(50px); 
+  animation: slideUp 2s ease-out forwards; 
+  animation-delay: 0.5s; 
 }
 
 .submit-button:hover {
-  /* Hiệu ứng hover từ .btn-contact */
-  background-color: #2c253b; /* Màu nền tím đậm khi hover */
-  color: #ffffff; /* Màu chữ trắng */
-  border: 1px solid #ffffff; /* Thêm viền trắng */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Đổ bóng */
-  transform: translateY(0); /* Đảm bảo nút không bị dịch chuyển */
+
+  background-color: #2c253b; 
+  color: #ffffff; 
+  border: 1px solid #ffffff; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  transform: translateY(0); 
 }
 
-/* Định nghĩa hiệu ứng animation */
+
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -589,20 +588,19 @@ textarea {
   position: relative;
   width: 100%;
   border: none;
-  /* Đường kẻ dưới ban đầu */
+ 
   border-bottom: 1px solid var(--accent-color);
   background: transparent;
 
-  /* THÊM TRANSITION cho hiệu ứng GLOW */
   transition: border-bottom 0.2s, box-shadow 0.3s ease-in-out;
 }
 
 
 
 .phone-container:focus-within {
-  /* Hiệu ứng Glow khi focus (nhập liệu) */
+ 
   border-bottom: 2px solid var(--text-light);
- /* Sáng trắng */
+
 }
 
 .input-group {
@@ -620,34 +618,34 @@ textarea {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  /* Căn chỉnh nội dung nút bấm */
+
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 15px;
 }
 
-/* Icon (trạng thái mặc định) */
+
 .flag-icon {
   font-size: 20px;
   color: var(--text-light);
 }
 
-/* Cờ (trạng thái sau khi chọn) */
+
 .country-btn img {
   width: 20px;
   height: 14px;
   border-radius: 2px;
 }
 
-/* SỬA QUAN TRỌNG: Màu chữ của input số điện thoại */
+
 #phone {
   border: none;
   background: transparent;
   flex: 1;
   padding: 10px 0;
-  /* Đặt lại màu trắng, để chữ nổi bật trên nền tím đậm */
-  color: var(--text-light); /* hoặc color: white; */
+
+  color: var(--text-light); 
   font-size: 14px;
   outline: none;
 }
@@ -689,7 +687,6 @@ textarea {
   transition: background 0.15s;
 }
 
-/* THÊM: Định nghĩa kích thước cờ trong dropdown */
 .country-item img {
   width: 20px;
   height: 14px;
@@ -816,7 +813,7 @@ textarea {
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
-        margin-left: 10px;
+        margin-left:23px;
         font-weight: 700;
         /* Icon X, LinkedIn, Facebook. Cần thay thế bằng Font Awesome hoặc SVG */
     }
@@ -826,7 +823,7 @@ textarea {
 
     /* Bản quyền */
     .copyright {
-        margin-left: -10px;
+        margin-left: -27px;
         margin-top: 30px;
         text-align: right; /* Căn lề phải */
         max-width: 1100px;
@@ -1110,4 +1107,570 @@ padding: 100px 0px 30px 0px;
     }
    
     .mobile-menu-icon { display: block; }
+
+/* 1 */
+.two-column-layout {
+            margin-top: 170px;
+            
+            width: 100%;
+
+        }
+    .text-column {
+            flex: 1; /* Cho phép cột này chiếm 1 phần không gian */
+            background-color: #2c253b; /* Màu nền giống như trong hình (màu tím đậm) */
+            color: white; /* Màu chữ trắng */
+            padding: 20px 5%; /* Thêm padding (khoảng cách lề) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+        }
+    .main-title {
+            font-size: 40px; /* Kích thước chữ linh hoạt theo màn hình */
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 700; /* In đậm */
+
+        }
+        .main-title br {
+        display: none; /* Ẩn thẻ <br>, do đó nó không còn tạo ra ngắt dòng */
+    }
+    .description {
+            font-size: 15px; /* Kích thước chữ linh hoạt */
+            line-height: 1.6;
+            max-width: 550px; 
+            font-weight: 700;
+
+    }
+    
+    .image-column img {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* 2 */
+    :root {
+    /* Main text and accent color (A slightly muted purple/dark violet) */
+    /* Based on the image's purple, a color like #5e43a6 or similar */
+    --primary-color: #000000; 
+    /* Color for the separator lines (A light gray) */
+    --line-color: #000000; 
+    /* Color for the contact values (Address, Phone, Email) - dark gray/black */
+    --value-color: #000000; 
+}
+    .contact-list-section {
+        margin: 20px;
+        max-width: 100%;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line-color); 
+        position: relative;
+    }
+
+    .contact-label {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Icon tròn nằm bên phải chữ Label */
+ .contact-icon-wrapper {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 40px;                /* tăng kích thước vòng */
+    height: 40px;
+    border: 1px solid var(--primary-color);  /* viền rõ hơn */
+    border-radius: 50%;         /* bo tròn hoàn toàn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+    
+
+.contact-item:last-child,
+.contact-item.no-border {
+    border-bottom: none;
+}
+    
+
+    .contact-value {
+        
+    padding-bottom: 7px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--value-color);
+        margin-left: 5px;
+        margin-top: 5px;
+        line-height: 1.4;
+        word-break: break-word;
+    }
+
+/* 3 */
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+    
+  color: #333;
+
+  --primary-color: #25173A; 
+  --accent-color: #3A4BFF;
+  --text-light: white;
+  --text-dark: #333;
+}
+
+.contact-page-container {
+ 
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px 0px;
+  gap: 10px;
+  
+}
+
+.left-section {
+  width: 80%;
+  background-color: #9fc9ec;
+  color: #25173A;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  padding: 50px;
+
+  border-right: 5px solid var(--text-light);
+  
+}
+
+.contact-title {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.arrow-icon-container-contact {
+  
+  background-color: transparent; 
+  border: 2px solid #25173A;; 
+  border-radius: 50%;
+  padding: 15px; 
+  display: flex; /* Thêm để căn giữa mũi tên */
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* Điều chỉnh kích thước nếu cần */
+  height: 30px; /* Điều chỉnh kích thước nếu cần */
+  box-sizing: content-box; /* Đảm bảo padding không ảnh hưởng đến width/height tổng thể */
+}
+
+.contact-icon-arrow {
+  font-size: 24px;
+  color: #25173A;; /* Màu mũi tên vẫn là trắng */
+  /* margin-left: -2px; */ /* Tùy chỉnh nhỏ để mũi tên cân đối hơn */
+}
+
+
+
+.right-section {
+margin-top: 15px;
+  width: 80%;
+  background-color: var(--primary-color);
+  padding: 50px;
+  border-radius: 1px; /* Thống nhất bo tròn */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  /* Mặc định màu chữ của section này là trắng */
+  color: var(--text-light);
+}
+
+/* =================== FORM ELEMENTS =================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--text-light); /* Màu chữ trắng cho input thường (First Name, Email) */
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid var(--text-light);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Placeholder màu nhạt */
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+
+  display: inline-block;
+  padding: 13px 30px;
+  background-color: #f5f4f4; /* Màu xám nhạt */
+  color: #000000; /* Màu chữ đen */
+  border: none;
+  text-decoration: none;
+  border-radius: 25px; /* Bo tròn mạnh */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+
+  margin-top: 20px;
+  align-self: flex-start; 
+ 
+
+  opacity: 0; 
+  transform: translateY(50px); 
+  animation: slideUp 2s ease-out forwards; 
+  animation-delay: 0.5s; 
+}
+
+.submit-button:hover {
+
+  background-color: #2c253b; 
+  color: #ffffff; 
+  border: 1px solid #ffffff; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  transform: translateY(0); 
+}
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================== PHONE INPUT & DROPDOWN =================== */
+
+.hidden {
+  display: none !important;
+}
+
+.phone-container {
+  position: relative;
+  width: 100%;
+  border: none;
+ 
+  border-bottom: 1px solid var(--accent-color);
+  background: transparent;
+
+  transition: border-bottom 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+
+
+.phone-container:focus-within {
+ 
+  border-bottom: 2px solid var(--text-light);
+
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.country-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 8px 10px 0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+}
+
+
+.flag-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+
+.country-btn img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+
+#phone {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px 0;
+
+  color: var(--text-light); 
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* =================== DROPDOWN =================== */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 280px;
+  max-height: 250px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+  color: var(--text-dark);
+}
+
+.dropdown.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.country-item img {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.country-item:hover {
+  background-color: #f2f2f2;
+}
+
+.footer {
+    
+        
+        background-color: #271E3C; /* Màu nền tím đậm như trong ảnh */
+        color: #FFFFFF; /* Màu chữ trắng */
+        padding: 40px 0; /* Khoảng cách trên dưới */
+        font-size: 16px; 
+    }
+
+    .footer-container {
+
+        justify-content: space-between; /* Đẩy hai cột về hai phía */
+
+        margin: 0 auto; /* Căn giữa container */
+        padding: 0 20px; /* Khoảng cách ngang */
+    }
+
+    .footer-column {
+        flex-basis: 50%; /* Mỗi cột chiếm 50% */
+        padding: 0 20px;
+    }
+
+    /* Cột Thông tin/Mô tả */
+    .info-column {
+    
+        flex-basis: 40%; /* Cột bên trái hẹp hơn một chút */
+    }
+
+    .logo1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo1 img {
+        /* Nếu bạn dùng ảnh logo */
+        height: 120px; 
+        margin-left: 80px;
+        /* Giả sử màu logo là màu xanh/cyan */
+    }
+
+    .section-divider {
+
+        /* Đảm bảo nó là một đường thẳng */
+        border: none;
+        height: 1px; /* Độ dày của đường viền */
+        
+        /* Màu tím đậm như trong hình */
+        background-color: #17113e; 
+        margin-top: 30px;
+        /* Thiết lập chiều rộng (Ví dụ: 80% chiều rộng của khối cha) */
+        width: 100%; 
+
+    }
+
+
+
+
+    .company-description {
+        margin-top: 30px;
+        line-height: 1.6;
+        max-width: 400px;
+        font-weight: 700;
+
+    }
+
+    /* Cột Liên hệ và Links */
+    .contact-column {
+
+
+        flex-direction: column;
+
+        
+    }
+
+    .footer-links {      
+        margin-left: -20px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none; /* Bỏ gạch chân */
+        margin-left: 20px; /* Khoảng cách giữa các link */
+        font-size: 14px;
+        font-weight: 700;
+        text-align:  left;
+
+    }
+
+    .contact-info p {
+
+        margin-right: 59px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left   ;
+    }
+
+    .contact-info .email {
+        color: #f8f8f8;
+        text-align: left;/* Màu tím nhạt hơn cho email (ước tính) */
+    }
+
+    .social-icons {
+        margin-top: 10px;
+ 
+        margin-left: -10px;
+        
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #4A3E5D; /* Màu nền cho icon */
+        color: #FFFFFF;
+        border-radius: 50%; /* Hình tròn */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+   
+    }
+
+
+
+
+    /* Bản quyền */
+    .copyright {
+        margin-left: 35px;
+        margin-top: 30px;
+        text-align: left; /* Căn lề phải */
+        max-width: 1100px;
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+
+.search-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.search-popup.active {
+  display: flex; /* hiện khi bấm nút */
+}
+
+.popup-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+}
+    
 }
